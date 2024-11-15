@@ -1,7 +1,7 @@
 import React from "react";
-import { Container, Grid2, Box} from '@mui/material';
-import Header from "./Header";
-import Socials from "./Socials";
+import {Box} from '@mui/material';
+import Header from "./components/Header";
+import Socials from "./components/Socials";
 
 
 function App() {

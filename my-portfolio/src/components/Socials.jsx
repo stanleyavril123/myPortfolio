@@ -1,6 +1,6 @@
 import { Avatar, Box } from "@mui/material";
-import githubImage from './assets/github.png'; 
-import linkedinImage from './assets/linkedin.png';
+import githubImage from '../assets/github.png'; 
+import linkedinImage from '../assets/linkedin.png';
 import React from "react";
 
 const Socials = () => (

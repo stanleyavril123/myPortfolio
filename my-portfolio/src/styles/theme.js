@@ -16,18 +16,18 @@ const theme = createTheme({
       'sans-serif',
     ].join(','),
     h1: {
-        fontSize: '6rem', // Customize h1 font size
-        fontWeight: 1000, // Optional: set font weight
+        fontSize: '4rem',
+        fontWeight: 1000,
       },
       h2: {
-        fontSize: '2rem', // Customize h2 font size
+        fontSize: '2rem',
         fontWeight: 600,
       },
       body1: {
-        fontSize: '1rem', // Customize body1 font size
+        fontSize: '1rem',
       },
       body2: {
-        fontSize: '0.875rem', // Customize body2 font size
+        fontSize: '0.875rem',
       },
   }
 });

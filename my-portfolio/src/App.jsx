@@ -1,35 +1,29 @@
 import React from "react";
 import { Container, Grid2, Box} from '@mui/material';
 import Header from "./Header";
+import Socials from "./Socials";
 
 
 function App() {
-
-    return (
-        <Container maxWidth="lg" 
+    return(
+        <Box
+        sx={{
+            display: "flex", 
+            justifyContent: "center",
+            paddingTop: "70px",
+        }}
+        >
+            <Box
             sx={{
-                backgroundColor: 'primary.main'// Set background color directly
-            }}>
-            <Grid2 container spacing={2}>
+                width: "45%",
+                height: "100%",
+            }}
+            >
+                <Header />
+                <Socials/>
+            </Box>
+        </Box>
 
-            {/* header */}
-
-            <Grid2 item xs={12}>
-                <Box 
-                    sx={{
-                        width: '400px',
-                        padding: 2,
-                        wordWrap: 'break-word',       // Enable word breaking for long text
-                        overflowWrap: 'break-word',   // Alternative to ensure long words break
-                     }}
-                >
-                    <Header />
-                </Box>
-            </Grid2>
-
-
-            </Grid2>
-        </Container>
 
     );
 }

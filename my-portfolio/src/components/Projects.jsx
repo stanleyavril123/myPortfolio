@@ -1,31 +1,24 @@
 import { Box, Card, CardContent, Stack, Typography } from "@mui/material";
 import React from "react";
+import data from "../projectData.json"
 
-const card = (
-    <>
-        <CardContent>
-            <Typography>hello</Typography>
-        </CardContent>
-    </>
-)
 
 export default function Projects() {
 
     return (
-        <Box
-        sx={{
-            paddingTop: "20px",
-        }}
-        >
-            <Typography variant="h6" color="textSecondary"
-                sx={{paddingBottom: "20px",}}>
-                My Projects: 
-            </Typography>
-            <Stack>
-                <Card>{card}</Card>
-            </Stack>
 
-        </Box>
+        <>
+            {data.map(((data, index) => (
+                <Card key={index} style={{}}>
+                    <CardContent>
+                        <Typography>{data.title}</Typography>
+                        <Typography>{data.description}</Typography>
+                        <Typography>{data.da}</Typography>
+                    </CardContent>
+                </Card>
+            )))}
+        </>
+
 
     );
 }

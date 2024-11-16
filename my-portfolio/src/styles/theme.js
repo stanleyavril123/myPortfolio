@@ -3,10 +3,10 @@ import { createTheme } from '@mui/material/styles';
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#ebe8e2', // Customize your primary color
+      main: '#ebe8e2',
     },
     secondary: {
-      main: '#dc004e', // Customize your secondary color
+      main: '#dc004e',
     },
   },
   typography: {
@@ -16,7 +16,7 @@ const theme = createTheme({
       'sans-serif',
     ].join(','),
     h1: {
-        fontSize: '4rem',
+        fontSize: '3rem',
         fontWeight: 1000,
       },
       h2: {

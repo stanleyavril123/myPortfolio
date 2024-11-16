@@ -8,21 +8,22 @@ const Socials = () => (
 <Box
 sx={{
     display: "flex",
-    gap: "10px",
+    gap: "5px",
 }}
 >
     <a href="https://github.com/stanleyavril123" target="_blank" rel="noopener noreferrer">
         <Avatar
         src={githubImage} 
-        alt="Github" 
+        alt="Github"
+        sx={{ width: 27, height: 27 }}
         />
     </a>
 
     <a href="https://www.linkedin.com/in/stanley-avril/" target="_blank" rel="noopener noreferrer">
         <Avatar 
         src={linkedinImage} 
-        alt="Linkedin" 
-        sx={{ borderRadius: "8px", border: "none"}}
+        alt="Linkedin"
+        sx={{ width: 24, height: 24 }}
         />
     </a>
 </Box>

@@ -1,5 +1,5 @@
 import React from "react";
-import {Box} from '@mui/material';
+import { Box } from "@mui/material";
 import Header from "./components/Header";
 import Socials from "./components/Socials";
 import Projects from "./components/Projects";
@@ -16,39 +16,44 @@ import NavButton from "./components/NavButton";
 // Contact
 
 function App() {
-    return(
-        <Box
+  return (
+    <Box
+      sx={{
+        scrollBehavior: "smooth",
+        height: "100vh",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center", 
+        paddingTop: "70px", 
+        overflowY: "auto",
+      }}
+    >
+      <Box
         sx={{
-            display: "flex", 
-            justifyContent: "center",
-            paddingTop: "70px",
+          position: "fixed",
+          top: "70px",
+          left: "20%",
+          display: "flex",
+          flexDirection: "column",
+          gap: 2,
         }}
-        >
-            <Box
-            sx={{
-                paddingRight: "10%",
-                position: "fixed",
-                top: "100px",
-                left: "10%",
-            }}
-            >
-                <Header />
-                <Socials />
-                <NavButton />
+      >
+        <Header />
+        <Socials />
+        <NavButton />
+      </Box>
 
-            </Box>
-
-            <Box
-            sx={{width: "50%", paddingLeft: "40%"}}
-            >
-                <Projects />
-            </Box>
-
-        
-        </Box>
-
-
-    );
+      <Box
+        sx={{
+          width: "50%",
+          marginLeft: "40%",
+          paddingBottom: "100px",
+        }}
+      >
+        <Projects />
+      </Box>
+    </Box>
+  );
 }
 
 export default App;

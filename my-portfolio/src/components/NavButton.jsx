@@ -3,18 +3,22 @@ import React from "react";
 
 
 const navButton = ["ABOUT", "PROJECTS", "SKILLS", "CONTACT ME"]
+const sectionIds = ["about", "projects", "skills", "contact"];
 
 export default function NavButton() {
     return (
-        <div>
+        <nav>
             <Stack direction="column" spacing={2}>
             {navButton.map((lable, index) => (
-                <a key={index}>
+                <a 
+                key={index}
+                href={`#${sectionIds[index]}`}
+                >
                     <Typography>{lable}</Typography>
                 </a>
             ))} 
             </Stack>
-        </div>
+        </nav>
     )
 
 

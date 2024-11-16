@@ -7,7 +7,7 @@ export default function Projects() {
 
     return (
 
-        <>
+        <div id="projects">
             <Typography variant="h6" color="textSecondary" sx={{paddingBottom: "20px",}}>
                 My Projects: 
             </Typography>
@@ -21,7 +21,7 @@ export default function Projects() {
                     </CardContent>
                 </Card>
             )))}
-        </>
+        </div>
 
 
     );

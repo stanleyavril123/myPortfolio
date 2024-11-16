@@ -3,7 +3,17 @@ import {Box} from '@mui/material';
 import Header from "./components/Header";
 import Socials from "./components/Socials";
 import Projects from "./components/Projects";
+import NavButton from "./components/NavButton";
 
+// Hero Section
+//  ↓
+// Projects
+//  ↓
+// Skills
+//  ↓
+// About Me
+//  ↓
+// Contact
 
 function App() {
     return(
@@ -16,14 +26,25 @@ function App() {
         >
             <Box
             sx={{
-                width: "45%",
-                height: "100%",
+                paddingRight: "10%",
+                position: "fixed",
+                top: "100px",
+                left: "10%",
             }}
             >
                 <Header />
-                <Socials/>
-                <Projects/>
+                <Socials />
+                <NavButton />
+
             </Box>
+
+            <Box
+            sx={{width: "50%", paddingLeft: "40%"}}
+            >
+                <Projects />
+            </Box>
+
+        
         </Box>
 
 

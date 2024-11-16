@@ -1,4 +1,4 @@
-import { Box, Card, CardContent, Stack, Typography } from "@mui/material";
+import {Card, CardContent, Typography } from "@mui/material";
 import React from "react";
 import data from "../projectData.json"
 

@@ -33,7 +33,7 @@ function App() {
         sx={{
           position: "fixed",
           top: "100px",
-          left: "20%",
+          left: "17%",
           display: "flex",
           flexDirection: "column",
           gap: 2,
@@ -47,7 +47,7 @@ function App() {
       <Box
         sx={{
           width: "50%",
-          marginLeft: "40%",
+          marginLeft: "55%",
           paddingBottom: "100px",
         }}
       >

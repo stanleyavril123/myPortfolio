@@ -23,7 +23,7 @@ sx={{
         <Avatar 
         src={linkedinImage} 
         alt="Linkedin"
-        sx={{ width: 24, height: 24 }}
+        sx={{ width: 26, height: 26, borderRadius: "8px" }}
         />
     </a>
 </Box>

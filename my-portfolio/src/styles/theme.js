@@ -16,7 +16,7 @@ const theme = createTheme({
       'sans-serif',
     ].join(','),
     h1: {
-      fontSize: '3rem',
+      fontSize: '4rem',
       fontWeight: 1000,
     },
     h2: {
@@ -34,15 +34,15 @@ const theme = createTheme({
     MuiCssBaseline: {
       styleOverrides: {
         html: {
-          scrollBehavior: 'smooth', // Enables smooth scrolling globally
+          scrollBehavior: 'smooth',
         },
         body: {
-          margin: 0, // Removes default margin
-          height: '100%', // Ensures full height for the body
-          overflow: 'hidden', // Prevent scrolling on the body
+          margin: 0,
+          height: '100%',
+          overflow: 'hidden',
         },
         '#root': {
-          height: '100%', // Ensures the root div takes the full height
+          height: '100%',
         },
       },
     },

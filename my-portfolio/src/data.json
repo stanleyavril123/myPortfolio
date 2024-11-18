@@ -1,4 +1,5 @@
-[
+{
+  "projects": [
     {
       "title": "Project 1",
       "description": "Description project 1",
@@ -35,5 +36,12 @@
       "date": "This Weekend",
       "languages": ["HTML", "CSS", "JavaScript"]
     }
-  ]
+  ],
+
+  "about":
+    {
+      "about_me":  " Blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla.Blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla. Blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla."
+    }
+
+}
   

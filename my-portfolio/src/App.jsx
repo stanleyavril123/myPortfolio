@@ -1,9 +1,10 @@
 import React from "react";
-import { Box } from "@mui/material";
+import { Box, Stack } from "@mui/material";
 import Header from "./components/Header";
 import Socials from "./components/Socials";
 import Projects from "./components/Projects";
 import NavButton from "./components/NavButton";
+import About from "./components/About";
 
 // Hero Section
 //  ↓
@@ -31,7 +32,7 @@ function App() {
       <Box
         sx={{
           position: "fixed",
-          top: "70px",
+          top: "100px",
           left: "20%",
           display: "flex",
           flexDirection: "column",
@@ -50,7 +51,11 @@ function App() {
           paddingBottom: "100px",
         }}
       >
-        <Projects />
+        <Stack spacing={15} sx={{width: "60%"}}>
+          <About />
+          <Projects />
+        </Stack>
+
       </Box>
     </Box>
   );

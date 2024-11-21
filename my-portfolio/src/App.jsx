@@ -17,26 +17,29 @@ import About from "./components/About";
 // Contact
 
 function App() {
+
+  const containerMaxWidth = 1200;
+  const halfContainerWidth = containerMaxWidth / 2;
+  const gapBetweenSections = 40;
+
   return (
     <Box
       sx={{
-        scrollBehavior: "smooth",
-        height: "100vh",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center", 
-        paddingTop: "70px", 
-        overflowY: "auto",
+        minHeight: '100vh',
+        display: 'flex',
+        justifyContent: 'center',
       }}
     >
+      {/* Left */}
       <Box
         sx={{
-          position: "fixed",
-          top: "100px",
-          left: "17%",
-          display: "flex",
-          flexDirection: "column",
+          position: 'fixed',
+          top: '70px',
+          left: `calc(50% - ${halfContainerWidth}px - ${gapBetweenSections}px)`,
+          display: 'flex',
+          flexDirection: 'column',
           gap: 2,
+          width: `${halfContainerWidth - gapBetweenSections}px`,
         }}
       >
         <Header />
@@ -44,21 +47,27 @@ function App() {
         <NavButton />
       </Box>
 
+      {/* Right */}
       <Box
         sx={{
-          width: "50%",
-          marginLeft: "55%",
-          paddingBottom: "100px",
+          marginLeft: `${halfContainerWidth + gapBetweenSections}px`,
+          paddingTop: '70px',
+          paddingBottom: '100px',
+          width: `${halfContainerWidth - gapBetweenSections}px`,
         }}
       >
-        <Stack spacing={15} sx={{width: "60%"}}>
+        <Stack spacing={15}>
           <About />
           <Projects />
         </Stack>
-
       </Box>
     </Box>
   );
 }
 
 export default App;
+
+
+
+
+

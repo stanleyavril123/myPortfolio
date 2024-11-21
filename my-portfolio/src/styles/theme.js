@@ -35,11 +35,11 @@ const theme = createTheme({
       styleOverrides: {
         html: {
           scrollBehavior: 'smooth',
+          height: '100%',
         },
         body: {
           margin: 0,
-          height: '100%',
-          overflow: 'hidden',
+          minHeight: '100%',
         },
         '#root': {
           height: '100%',

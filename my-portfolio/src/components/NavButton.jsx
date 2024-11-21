@@ -1,4 +1,4 @@
-import { Button, Stack, Typography } from "@mui/material";
+import { Stack, Typography } from "@mui/material";
 import React from "react";
 
 
@@ -11,9 +11,14 @@ export default function NavButton() {
             <Stack direction="column" spacing={2}>
             {navButton.map((lable, index) => (
                 <a 
-                key={index}
-                href={`#${sectionIds[index]}`}
+                    key={index}
+                    href={`#${sectionIds[index]}`}
+                    style={{
+                        textDecoration: 'none',
+                        color: 'black',
+                    }}
                 >
+
                     <Typography>{lable}</Typography>
                 </a>
             ))} 

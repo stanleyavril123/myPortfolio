@@ -2,14 +2,24 @@ import React from "react";
 import { Box } from "@mui/material";
 // import githubImage from '../assets/github.png'; 
 
-const ProjectCard = ({title, description, date, language, image}) => (
+const ProjectCard = ({title, description, date, language, imagePath}) => (
 
     <Box
-    sx={{width:"200px"}}
+    sx={{display:"flex",
+        flexDirection:"row"
+    }}
     >
-        <img src="../assets/linkedin.png" alt=""/>
-
+        <Box sx={{width:"200px"}}>
+            <img 
+            src={imagePath}
+            width={"125px"}
+            />
+        </Box>
+        <Box>
+            {title}
+        </Box>
     </Box>
+
 
 )
 

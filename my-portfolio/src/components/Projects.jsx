@@ -23,6 +23,7 @@ export default function Projects() {
                             description={project.description}
                             date={project.date}
                             language={project.language}
+                            imagePath={project.image}
                             />
                         </CardContent>
                     </Card>

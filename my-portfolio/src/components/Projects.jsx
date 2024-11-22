@@ -1,4 +1,5 @@
 import {Card, CardContent, Stack, Typography } from "@mui/material";
+import ProjectCard from "./ProjectCard.jsx"
 import React from "react";
 import data from "../data.json"
 
@@ -17,10 +18,12 @@ export default function Projects() {
                     sx={{borderRadius: "0", }}
                     >
                         <CardContent>
-                            <Typography>{project.title}</Typography>
-                            <Typography>{project.description}</Typography>
-                            <Typography>{project.date}</Typography>
-                            <Typography>{project.languages}</Typography>
+                            <ProjectCard 
+                            title={project.title}
+                            description={project.description}
+                            date={project.date}
+                            language={project.language}
+                            />
                         </CardContent>
                     </Card>
                 )))}

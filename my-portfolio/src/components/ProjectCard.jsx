@@ -9,13 +9,11 @@ const ProjectCard = ({title, description, date, language, imagePath}) => (
         flexDirection:"row"
     }}
     >
-        <Box sx={{width:"750px", display: "flex", justifyContent: "center", marginRight:3 }}>
             <img 
-            style={{maxWidth: "100%", maxHeight: "500px",  objectFit: "contain" }}
+            style={{maxWidth: "100%", maxHeight: "80px",  objectFit: "contain", marginRight: "24px"}}
             src={imagePath}
             alt=""
             />
-        </Box>
         <Box>
             <Typography variant="h3">{title}</Typography>
             <Typography>{description}</Typography>

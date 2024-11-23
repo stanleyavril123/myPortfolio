@@ -2,10 +2,10 @@
   "projects": [
     {
       "title": "Project 1",
-      "description": "Description project 1",
+      "description": "Building a modern and responsive portfolio website built with React and Material-UI. This project is designed to present my professional experience, skills, and projects in a smooth, user-friendly, and visually appealing manner. It provides a seamless experience for visitors to explore my journey and contact me effortlessly.",
       "date": "Today - Tomorrow",
       "languages": ["Python", "Java", "Javascript", "PHP"],
-      "image": "test.png"
+      "image": "test2.png"
     },
     {
       "title": "Project 2",

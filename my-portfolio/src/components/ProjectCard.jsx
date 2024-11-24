@@ -10,7 +10,7 @@ const ProjectCard = ({title, description, date, language, imagePath}) => (
     }}
     >
             <img 
-            style={{maxWidth: "100%", maxHeight: "80px",  objectFit: "contain", marginRight: "24px"}}
+            style={{maxWidth: "100%", maxHeight: "80px",  objectFit: "contain", marginRight: "24px", borderRadius: "5px"}}
             src={imagePath}
             alt=""
             />

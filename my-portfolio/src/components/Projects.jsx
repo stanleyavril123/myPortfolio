@@ -15,7 +15,7 @@ export default function Projects() {
             <Stack spacing={3}>
                 {projects.map(((project, index) => (
                     <Card key={index}
-                    sx={{borderRadius: "10", }}
+                    sx={{borderRadius: "10px", }}
                     >
                         <CardContent>
                             <ProjectCard 

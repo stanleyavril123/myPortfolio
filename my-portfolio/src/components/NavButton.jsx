@@ -9,19 +9,19 @@ export default function NavButton() {
     return (
         <nav>
             <Stack direction="column" spacing={2}>
-            {navButton.map((lable, index) => (
-                <a 
-                    key={index}
-                    href={`#${sectionIds[index]}`}
-                    style={{
-                        textDecoration: 'none',
-                        color: 'black',
-                    }}
-                >
+                {navButton.map((lable, index) => (
+                    <a
+                        key={index}
+                        href={`#${sectionIds[index]}`}
+                        style={{
+                            textDecoration: 'none',
+                            color: 'black',
+                        }}
+                    >
 
-                    <Typography>{lable}</Typography>
-                </a>
-            ))} 
+                        <Typography>{lable}</Typography>
+                    </a>
+                ))}
             </Stack>
         </nav>
     )

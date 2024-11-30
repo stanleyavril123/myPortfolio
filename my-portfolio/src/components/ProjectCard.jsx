@@ -34,7 +34,7 @@ const ProjectCard = ({ title, description, date, languages, imagePath }) => (
                     marginBottom: "10px",
                 }}
             >
-                <Typography variant="h3">{title}</Typography>
+                <Typography variant="h3" className="project-title">{title}</Typography>
                 <Typography variant="subtitle1" >{date}</Typography>
             </Box>
             <hr />

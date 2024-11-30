@@ -22,11 +22,15 @@ export default function Projects() {
                             border: "2px solid transparent",
                             boxShadow: "none",
                             transition: "border-color 0.3s, opacity 0.3s, filter 0.3s",
-
                             opacity:
                                 hoveredProjectIndex === null || hoveredProjectIndex === index
                                     ? 1
                                     : 0.5,
+                            '&:hover': {
+                                '& .project-title': {
+                                    color: "#800020",
+                                },
+                            }
                         }}
                         onMouseEnter={() => setHoveredProjectIndex(index)}
                         onMouseLeave={() => setHoveredProjectIndex(null)}

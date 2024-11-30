@@ -5,12 +5,11 @@ const Header = () => (
 
     <>
         <div>
-            <Typography variant="h1">Stanley Avril</Typography>
-            <Typography variant="h6" color="textSecondary">
+            <Typography variant="h1" >Stanley Avril</Typography>
+            <Typography variant="h4" sx={{ marginLeft: '2px' }}>
                 Software Engineering Student
             </Typography>
         </div>
-
     </>
 
 

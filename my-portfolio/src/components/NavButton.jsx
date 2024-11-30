@@ -19,7 +19,7 @@ export default function NavButton() {
                         }}
                     >
 
-                        <Typography>{lable}</Typography>
+                        <Typography variant="body2">{lable}</Typography>
                     </a>
                 ))}
             </Stack>

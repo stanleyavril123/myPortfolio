@@ -21,7 +21,7 @@ const theme = createTheme({
     ].join(','),
     h1: {
       fontSize: '4rem',
-      fontWeight: 1000,
+      fontWeight: 500,
     },
     h2: {
       fontSize: '2rem',
@@ -31,11 +31,18 @@ const theme = createTheme({
       fontSize: '1.3rem',
       fontWeight: 700
     },
+    h4: {
+      fontSize: '1.3rem',
+      fontWeight: 700
+    },
     body1: {
-      fontSize: '1rem',
+      fontSize: '0.7rem',
     },
     body2: {
       fontSize: '0.875rem',
+    },
+    body3: {
+      fontSize: '1rem',
     },
   },
   components: {

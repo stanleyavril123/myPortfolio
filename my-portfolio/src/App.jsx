@@ -20,7 +20,7 @@ function App() {
 
   const containerMaxWidth = 1200;
   const halfContainerWidth = containerMaxWidth / 2;
-  const gapBetweenSections = 40;
+  const gapBetweenSections = 60;
 
   return (
     <Box
@@ -34,8 +34,8 @@ function App() {
       <Box
         sx={{
           position: 'fixed',
-          top: '70px',
-          left: `calc(50% - ${halfContainerWidth}px - ${gapBetweenSections}px)`,
+          top: '90px',
+          left: `calc(50% - ${halfContainerWidth}px - ${gapBetweenSections}px + 100px)`,
           display: 'flex',
           flexDirection: 'column',
           gap: 2,
@@ -51,9 +51,9 @@ function App() {
       <Box
         sx={{
           marginLeft: `${halfContainerWidth + gapBetweenSections}px`,
-          paddingTop: '70px',
+          paddingTop: '90px',
           paddingBottom: '100px',
-          width: `${halfContainerWidth - gapBetweenSections}px`,
+          width: '650px'
         }}
       >
         <Stack spacing={15}>

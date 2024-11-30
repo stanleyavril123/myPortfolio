@@ -51,7 +51,7 @@ function App() {
       <Box
         sx={{
           marginLeft: `${halfContainerWidth + gapBetweenSections}px`,
-          paddingTop: '90px',
+          paddingTop: '100px',
           paddingBottom: '100px',
           width: '650px'
         }}

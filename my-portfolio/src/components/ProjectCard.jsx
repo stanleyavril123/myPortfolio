@@ -15,7 +15,7 @@ const ProjectCard = ({ title, description, date, languages, imagePath }) => (
     >
         <img
             style={{
-                width: "150px",
+                width: "125px",
                 height: "auto",
                 marginRight: "24px",
                 marginBottom: "75px",
@@ -25,9 +25,20 @@ const ProjectCard = ({ title, description, date, languages, imagePath }) => (
             src={imagePath}
             alt=""
         />
-        <Box>
-            <Typography variant="h3">{title}</Typography>
-            <Typography variant="body2" sx={{ marginBottom: "10px" }}>{description}</Typography>
+        <Box sx={{ flex: 1 }}>
+            <Box
+                sx={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                    marginBottom: "10px",
+                }}
+            >
+                <Typography variant="h3">{title}</Typography>
+                <Typography variant="subtitle1" >{date}</Typography>
+            </Box>
+            <hr />
+            <Typography variant="body2" sx={{ marginBottom: "20px" }}>{description}</Typography>
             {languages.map((language, index) => (
                 <Language Language={language} key={index}
                     sx={{

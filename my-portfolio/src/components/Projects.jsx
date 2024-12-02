@@ -28,7 +28,7 @@ export default function Projects() {
                                     : 0.5,
                             '&:hover': {
                                 '& .project-title': {
-                                    color: "#800020",
+                                    color: "#005b49",
                                 },
                             }
                         }}

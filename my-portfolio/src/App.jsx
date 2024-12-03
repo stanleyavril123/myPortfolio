@@ -5,6 +5,7 @@ import Socials from "./components/Socials";
 import Projects from "./components/Projects";
 import NavButton from "./components/NavButton";
 import About from "./components/About";
+import Skills from "./components/Skills";
 
 // Hero Section
 //  ↓
@@ -59,6 +60,7 @@ function App() {
         <Stack spacing={15}>
           <About />
           <Projects />
+          <Skills />
         </Stack>
       </Box>
     </Box>

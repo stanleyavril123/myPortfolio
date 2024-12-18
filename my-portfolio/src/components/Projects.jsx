@@ -32,8 +32,14 @@ export default function Projects() {
                                 },
                             }
                         }}
-                        onMouseEnter={() => setHoveredProjectIndex(index)}
-                        onMouseLeave={() => setHoveredProjectIndex(null)}
+                        onMouseEnter={() => {
+                            setHoveredProjectIndex(index);
+                            console.log(`hovering =  ${index}`)
+                        }}
+                        onMouseLeave={() => {
+                            setHoveredProjectIndex(null);
+                            console.log(`nolonger hovering =  ${index}`)
+                        }}
                     >
                         <CardContent>
                             <ProjectCard

@@ -59,6 +59,13 @@ const theme = createTheme({
         '#root': {
           height: '100%',
         },
+        '.circle': {
+          width: '8px',
+          height: '8px',
+          borderRadius: '50%',
+          background: '#005b49',
+          display: 'inline-block'
+        }
       },
     },
   },

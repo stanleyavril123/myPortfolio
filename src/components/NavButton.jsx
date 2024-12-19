@@ -33,9 +33,8 @@ export default function NavButton() {
                         }
                         }
                     >
-                        <motion.div className="circle" animate={hoveredIndex === index ? {
+                        <motion.div className="square" animate={hoveredIndex === index ? {
                             width: '50px',
-                            borderRadius: '15px'
                         } : {}}
                         />
                         <Typography variant="body2" display="inline" > {lable} </Typography>

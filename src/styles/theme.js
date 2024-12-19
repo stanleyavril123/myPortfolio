@@ -15,17 +15,19 @@ const theme = createTheme({
   },
   typography: {
     fontFamily: [
-      'Helvetica',
+      'Inter',
       'Arial',
       'sans-serif',
     ].join(','),
     h1: {
-      fontSize: '4rem',
-      fontWeight: 500,
+      fontSize: '5.7rem',
+      fontWeight: 750,
+      color:"#f0201c"
     },
     h2: {
       fontSize: '3rem',
       fontWeight: 500,
+      color:"#f0201c"
     },
     h3: {
       fontSize: '1rem',
@@ -59,11 +61,10 @@ const theme = createTheme({
         '#root': {
           height: '100%',
         },
-        '.circle': {
+        '.square': {
           width: '8px',
           height: '8px',
-          borderRadius: '50%',
-          background: '#005b49',
+          background: '#f0201c',
           display: 'inline-block'
         }
       },

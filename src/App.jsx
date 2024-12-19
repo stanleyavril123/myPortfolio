@@ -21,7 +21,7 @@ function App() {
 
   const containerMaxWidth = 1200;
   const halfContainerWidth = containerMaxWidth / 2;
-  const gapBetweenSections = 60;
+  const gapBetweenSections = 100;
 
   return (
     <Box
@@ -54,7 +54,7 @@ function App() {
           marginLeft: `${halfContainerWidth + gapBetweenSections}px`,
           paddingTop: '100px',
           paddingBottom: '100px',
-          width: '650px'
+          width: '600px'
         }}
       >
         <Stack spacing={15}>

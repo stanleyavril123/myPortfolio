@@ -9,7 +9,6 @@ export default function Skills() {
             <Typography variant="h2" sx={{ paddingBottom: "20px", }}>
                 Skills
             </Typography>
-
         </div>
 
 

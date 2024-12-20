@@ -66,7 +66,11 @@ const theme = createTheme({
           height: '8px',
           background: '#f0201c',
           display: 'inline-block'
-        }
+        },
+         '::selection': {
+          backgroundColor: '#800020', 
+          color: '#ffffff', 
+        },
       },
     },
   },

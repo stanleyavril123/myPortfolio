@@ -62,7 +62,7 @@ export default function Projects() {
                 description={project.description}
                 date={project.date}
                 languages={project.languages}
-                imagePath={project.image}
+                imagePath={project.images[0]}
               />
             </CardContent>
           </Card>

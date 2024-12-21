@@ -1,6 +1,11 @@
 import React, { useState } from "react";
-import { Dialog, DialogTitle, DialogContent } from "@mui/material";
-// import RotateAndSlideTransition from "./RotateAndSlideTransition";
+import {
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  Box,
+  Typography,
+} from "@mui/material";
 import Slide from "@mui/material/Slide";
 import { forwardRef } from "react";
 
@@ -27,7 +32,7 @@ const ProjectWindow = ({ openWindow, handleClose, selectedProject }) => {
       TransitionComponent={SlideTransition}
       TransitionProps={{
         onExited: handleExited,
-        timeout: { enter: 300, exit: 300 },
+        timeout: { enter: 500, exit: 500 },
       }}
       keepMounted
       sx={{
@@ -35,7 +40,7 @@ const ProjectWindow = ({ openWindow, handleClose, selectedProject }) => {
           maxHeight: "none",
           height: "2000px",
           overflow: "visible",
-          width: "1000px",
+          width: "1200px",
           borderRadius: "12px",
           top: "300px",
         },
@@ -46,9 +51,37 @@ const ProjectWindow = ({ openWindow, handleClose, selectedProject }) => {
         },
       }}
     >
-      <DialogTitle>{selectedProject.title}</DialogTitle>
+      <DialogTitle
+        variant="h5"
+        sx={{
+          maxWidth: "550px",
+          wordWrap: "break-word",
+          textAlign: "center",
+          whiteSpace: "normal",
+          overflow: "hidden",
+        }}
+      >
+        {selectedProject.title}
+      </DialogTitle>
       <DialogContent>
-        <p>Hello, this is {selectedProject.title}</p>
+        <Typography variant="body2">{selectedProject.description}</Typography>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            gap: 5,
+          }}
+        >
+          {selectedProject.images.map((image, index) => (
+            <img
+              alt=""
+              key={index}
+              src={image}
+              style={{ height: "auto", width: "1100px", borderRadius: "10px" }}
+            />
+          ))}
+        </Box>
       </DialogContent>
     </Dialog>
   );

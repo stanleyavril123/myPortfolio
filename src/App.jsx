@@ -20,7 +20,7 @@ import Skills from "./components/Skills";
 function App() {
   const containerMaxWidth = 1200;
   const halfContainerWidth = containerMaxWidth / 2;
-  const gapBetweenSections = 100;
+  const gapBetweenSections = 150;
 
   return (
     <Box

@@ -1,75 +1,70 @@
-import { createTheme } from '@mui/material/styles';
+import { createTheme } from "@mui/material/styles";
 
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#ebe8e2',
+      main: "#ebe8e2",
     },
     secondary: {
-      main: '#800020'
+      main: "#800020",
     },
     background: {
       default: "#faf6f3",
     },
-
   },
   typography: {
-    fontFamily: [
-      'Inter',
-      'Arial',
-      'sans-serif',
-    ].join(','),
+    fontFamily: ["Inter", "Arial", "sans-serif"].join(","),
     h1: {
-      fontSize: '5.7rem',
+      fontSize: "5.7rem",
       fontWeight: 750,
-      color:"#f0201c"
+      color: "#f0201c",
     },
     h2: {
-      fontSize: '3rem',
+      fontSize: "3rem",
       fontWeight: 500,
-      color:"#f0201c"
+      color: "#f0201c",
     },
     h3: {
-      fontSize: '1rem',
-      fontWeight: 600
+      fontSize: "1rem",
+      fontWeight: 600,
     },
     h4: {
-      fontSize: '1.3rem',
-      fontWeight: 700
+      fontSize: "1.3rem",
+      fontWeight: 700,
     },
     body1: {
-      fontSize: '0.7rem',
+      fontSize: "0.7rem",
     },
     body2: {
-      fontSize: '0.875rem',
+      fontSize: "0.875rem",
     },
     body3: {
-      fontSize: '1rem',
+      fontSize: "1rem",
     },
   },
   components: {
     MuiCssBaseline: {
       styleOverrides: {
         html: {
-          scrollBehavior: 'smooth',
-          height: '100%',
+          scrollBehavior: "smooth",
+          height: "100%",
         },
         body: {
           margin: 0,
-          minHeight: '100%',
+          minHeight: "100%",
         },
-        '#root': {
-          height: '100%',
+        "#root": {
+          height: "100%",
         },
-        '.square': {
-          width: '8px',
-          height: '8px',
-          background: '#f0201c',
-          display: 'inline-block'
+        ".square": {
+          width: "8px",
+          height: "8px",
+          background: "#f0201c",
+          display: "inline-block",
         },
-         '::selection': {
-          backgroundColor: '#800020', 
-          color: '#ffffff', 
+        "::selection": {
+          backgroundColor: "#800020",
+          color: "#ffffff",
         },
       },
     },

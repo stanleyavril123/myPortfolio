@@ -18,7 +18,6 @@ import Skills from "./components/Skills";
 // Contact
 
 function App() {
-
   const containerMaxWidth = 1200;
   const halfContainerWidth = containerMaxWidth / 2;
   const gapBetweenSections = 100;
@@ -26,19 +25,19 @@ function App() {
   return (
     <Box
       sx={{
-        minHeight: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
+        minHeight: "100vh",
+        display: "flex",
+        justifyContent: "center",
       }}
     >
       {/* Left */}
       <Box
         sx={{
-          position: 'fixed',
-          top: '90px',
+          position: "fixed",
+          top: "90px",
           left: `calc(50% - ${halfContainerWidth}px - ${gapBetweenSections}px + 100px)`,
-          display: 'flex',
-          flexDirection: 'column',
+          display: "flex",
+          flexDirection: "column",
           gap: 2,
           width: `${halfContainerWidth - gapBetweenSections}px`,
         }}
@@ -52,9 +51,9 @@ function App() {
       <Box
         sx={{
           marginLeft: `${halfContainerWidth + gapBetweenSections}px`,
-          paddingTop: '100px',
-          paddingBottom: '100px',
-          width: '600px'
+          paddingTop: "100px",
+          paddingBottom: "100px",
+          width: "600px",
         }}
       >
         <Stack spacing={15}>
@@ -68,8 +67,3 @@ function App() {
 }
 
 export default App;
-
-
-
-
-

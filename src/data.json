@@ -5,13 +5,15 @@
       "description": "A modern and responsive portfolio website built with React and Material-UI. This project is designed to present my professional experience, skills, and projects in a smooth, user-friendly, and visually appealing manner. It provides a seamless experience for visitors to explore my journey and contact me effortlessly.",
       "date": "2024",
       "languages": ["Python", "Java", "Javascript", "PHP"],
-      "images": ["test2.png", "test3.png"]
+      "cover": "test2.png",
+      "images": ["test3.png", "test.png"]
     },
     {
       "title": "Project 2",
       "description": "Description project 2",
       "date": "Next Week",
       "languages": ["Python", "JavaScript"],
+      "cover": "test2.png",
       "images": [" "]
     },
     {
@@ -19,6 +21,7 @@
       "description": "Description project 3",
       "date": "Next Month",
       "languages": ["JavaScript", "HTML", "CSS", "Node.js"],
+      "cover": "test2.png",
       "images": [" "]
     },
     {
@@ -26,6 +29,7 @@
       "description": "Description project 4",
       "date": "Ongoing",
       "languages": ["Python", "R"],
+      "cover": "test2.png",
       "images": [" "]
     },
     {
@@ -33,6 +37,7 @@
       "description": "Description project 5",
       "date": "Two Weeks from Now",
       "languages": ["JavaScript", "React Native", "Java"],
+      "cover": "test2.png",
       "images": [" "]
     },
     {
@@ -40,6 +45,7 @@
       "description": "Description project 6",
       "date": "This Weekend",
       "languages": ["HTML", "CSS", "JavaScript"],
+      "cover": "test2.png",
       "images": [" "]
     }
   ],

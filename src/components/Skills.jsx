@@ -1,26 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import { Typography, Box } from "@mui/material";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 import { FaReact, FaPython, FaJs, FaJava } from "react-icons/fa";
+import CppIcon from "./svgIcon/CppIcon";
+import TsIcon from "./svgIcon/TsIcon";
 
 const skills = [
-  { name: "React", icon: <FaReact /> },
   { name: "Python", icon: <FaPython /> },
-  { name: "JavaScript", icon: <FaJs /> },
+  { name: "C++", icon: <CppIcon /> },
   { name: "Java", icon: <FaJava /> },
+  { name: "React", icon: <FaReact /> },
+  { name: "JavaScript", icon: <FaJs /> },
+  { name: "TypeScript", icon: <TsIcon /> },
 ];
 
 export default function Skills() {
+  const [iconHovered, setIconHovered] = useState(null);
+
   return (
     <div id="skills" style={{ marginTop: "40px" }}>
       <Typography variant="h2" sx={{ paddingBottom: "20px", color: "#f0201c" }}>
         Skills
       </Typography>
-      <Box
-        display="grid"
-        gridTemplateColumns="repeat(auto-fit, minmax(250px, 1fr))"
-        gap={3}
-      >
+      <Box display="grid" gridTemplateColumns="repeat(3, 1fr)" gap={2}>
         {skills.map((skill, index) => (
           <Box
             key={index}
@@ -30,11 +32,14 @@ export default function Skills() {
             }}
           >
             <motion.div
+              onHoverStart={() => setIconHovered(index)}
+              onHoverEnd={() => setIconHovered(null)}
               whileHover={{ scale: 1.2 }}
               transition={{ duration: 0.3 }}
               style={{
                 fontSize: "40px",
-                color: "#f0201c",
+                color: iconHovered === index ? "#f0201c" : "black",
+                fill: iconHovered === index ? "#f0201c" : "black",
                 marginBottom: "10px",
               }}
             >
@@ -42,20 +47,14 @@ export default function Skills() {
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0 }}
-              whileHover={{ opacity: 1 }}
-              transition={{ duration: 0.3 }}
               style={{
                 position: "absolute",
                 top: "60px",
                 left: "50%",
                 transform: "translateX(-50%)",
-                backgroundColor: "rgba(240, 32, 28, 0.8)",
-                color: "#fff",
-                padding: "5px 10px",
-                borderRadius: "5px",
+                color: "black",
                 fontSize: "0.9rem",
-                whiteSpace: "nowrap",
+                opacity: iconHovered === index ? 1 : 0,
               }}
             >
               {skill.name}

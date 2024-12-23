@@ -58,8 +58,8 @@ function App() {
       >
         <Stack spacing={15}>
           <About />
-          <Projects />
           <Skills />
+          <Projects />
         </Stack>
       </Box>
     </Box>

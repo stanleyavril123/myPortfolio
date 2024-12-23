@@ -44,10 +44,13 @@
     }
   ],
 
-  "about":
-    {
-      "about_me":  " Blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla.Blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla. Blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla."
-    }
+  "about": {
+    "about_me": [
+      "I'm a software engineering student passionate about building user-centered applications that combine clean design with scalable engineering for exceptional user experiences. I thrive at the intersection of creativity and technology, solving problems and bringing innovative ideas to life.",
+      "Currently, I’m working on full-stack development, cybersecurity, and machine learning projects, including a task manager app to boost productivity and a pentesting tool for automating website vulnerability assessments. These projects enhance my skills in creating robust software while addressing real-world challenges.",
+      "My journey includes contributing to challenging GitHub repositories and collaborating on a cybersecurity-focused startup, building a strong foundation in software design, problem-solving, and teamwork. Beyond coding, I’m an avid Brazilian jiu-jitsu practitioner, a fitness enthusiast, and a runner, always exploring creative hobbies and planning my next big idea."
+    ]
+  }
 
 }
   

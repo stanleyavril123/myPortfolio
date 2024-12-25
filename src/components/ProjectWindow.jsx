@@ -51,20 +51,34 @@ const ProjectWindow = ({ openWindow, handleClose, selectedProject }) => {
         },
       }}
     >
-      <DialogTitle
-        variant="h5"
+      <Box
         sx={{
-          maxWidth: "550px",
-          wordWrap: "break-word",
-          textAlign: "center",
-          whiteSpace: "normal",
-          overflow: "hidden",
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          padding: 2,
+          marginBottom: 2,
         }}
       >
-        {selectedProject.title}
-      </DialogTitle>
+        <DialogTitle
+          variant="h5"
+          sx={{
+            maxWidth: "550px",
+            wordWrap: "break-word",
+            whiteSpace: "normal",
+            overflow: "hidden",
+            margin: 0,
+          }}
+        >
+          {selectedProject.title}
+        </DialogTitle>
+
+        <Typography variant="body2" sx={{ marginLeft: 10 }}>
+          {selectedProject.description}
+        </Typography>
+      </Box>
+
       <DialogContent>
-        <Typography variant="body2">{selectedProject.description}</Typography>
         <Box
           sx={{
             display: "flex",

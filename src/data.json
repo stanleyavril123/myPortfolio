@@ -4,7 +4,7 @@
       "title": "Porfolio Website",
       "description": "A modern and responsive portfolio website built with React and Material-UI. This project is designed to present my professional experience, skills, and projects in a smooth, user-friendly, and visually appealing manner. It provides a seamless experience for visitors to explore my journey and contact me effortlessly.",
       "date": "2024",
-      "languages": ["Python", "Java", "Javascript", "PHP"],
+      "languages": ["React","Javascript", "MUI"],
       "cover": "test2.png",
       "images": ["test3.png", "test.png"]
     },

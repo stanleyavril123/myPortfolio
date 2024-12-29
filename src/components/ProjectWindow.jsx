@@ -38,7 +38,7 @@ const ProjectWindow = ({ openWindow, handleClose, selectedProject }) => {
       sx={{
         "& .MuiDialog-paper": {
           maxHeight: "none",
-          height: "2000px",
+          height: "2500px",
           overflow: "visible",
           width: "1200px",
           borderRadius: "12px",
@@ -76,6 +76,9 @@ const ProjectWindow = ({ openWindow, handleClose, selectedProject }) => {
         <Typography variant="body2" sx={{ marginLeft: 10 }}>
           {selectedProject.description}
         </Typography>
+        <a href={selectedProject.repo}>
+          <Typography>git</Typography>
+        </a>
       </Box>
 
       <DialogContent>

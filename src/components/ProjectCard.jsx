@@ -21,6 +21,7 @@ const ProjectCard = ({ title, description, date, languages, imagePath }) => {
           marginBottom: "75px",
           marginTop: "7px",
           borderRadius: "5px",
+          border: "1px solid red",
           display: "block",
         }}
         src={imagePath}

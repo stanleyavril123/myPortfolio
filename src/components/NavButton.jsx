@@ -5,7 +5,6 @@ import { useState } from "react";
 
 const navButton = ["ABOUT", "SKILLS", "PROJECTS"];
 const sectionIds = ["about", "skills", "projects"];
-
 export default function NavButton() {
   const [hoveredIndex, setHoverIndex] = useState(null);
   return (

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Typography, Box } from "@mui/material";
 import { motion } from "framer-motion";
-import { FaReact, FaPython, FaJs, FaJava } from "react-icons/fa";
+import { FaReact, FaPython, FaJs, FaJava, FaGitAlt, FaRedhat, FaLinux} from "react-icons/fa";
 import CppIcon from "./svgIcon/CppIcon";
 import TsIcon from "./svgIcon/TsIcon";
 
@@ -12,6 +12,9 @@ const skills = [
   { name: "React", icon: <FaReact /> },
   { name: "JavaScript", icon: <FaJs /> },
   { name: "TypeScript", icon: <TsIcon /> },
+  { name: "GitHub", icon: <FaGitAlt /> },
+  { name: "Pentesting", icon: <FaRedhat /> },
+  { name: "Linux", icon: <FaLinux /> },
 ];
 
 export default function Skills() {

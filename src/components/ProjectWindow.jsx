@@ -82,7 +82,7 @@ const ProjectWindow = ({ openWindow, handleClose, selectedProject }) => {
           }}
         >
           <Typography variant="body2">{selectedProject.description}</Typography>
-          <GitLink repoLink={selectedProject.repo} />
+          <GitLink repoLink={selectedProject.link[0]} text={selectedProject.link[1]}/>
         </Box>
       </Box>
 

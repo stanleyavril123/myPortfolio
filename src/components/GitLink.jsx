@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "@mui/material";
 
-const GitLink = ({ repoLink }) => {
+const GitLink = ({ repoLink, text }) => {
     return (
     <Link
       href={repoLink}
@@ -16,7 +16,7 @@ const GitLink = ({ repoLink }) => {
         fontSize: "34px",
       }}
     >
-      Github Repo
+      {text}
       <span
         className="material-symbols-outlined"
         style={{

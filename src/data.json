@@ -7,7 +7,7 @@
       "languages": ["React","Javascript", "MUI"],
       "cover": "test.png",
       "images": ["test3.png", "test.png"],
-      "repo": "https://github.com/stanleyavril123/myPortfolio"
+      "link": ["https://github.com/stanleyavril123/myPortfolio", "Github Repo"]
     },
     {
       "title": "Project 2",
@@ -16,7 +16,7 @@
       "languages": ["Python", "JavaScript"],
       "cover": "test2.png",
       "images": [" "],
-      "repo": "https://github.com/stanleyavril123/myPortfolio"
+      "link": ["https://github.com/stanleyavril123/myPortfolio", "Le Polyscope"]
     },
     {
       "title": "Project 3",
@@ -25,7 +25,7 @@
       "languages": ["JavaScript", "HTML", "CSS", "Node.js"],
       "cover": "test2.png",
       "images": [" "],
-      "repo": "https://github.com/stanleyavril123/myPortfolio"
+      "link": ["https://github.com/stanleyavril123/myPortfolio", "Github Repo"]
     },
     {
       "title": "Project 4",
@@ -34,7 +34,7 @@
       "languages": ["Python", "R"],
       "cover": "test2.png",
       "images": [" "],
-      "repo": "https://github.com/stanleyavril123/myPortfolio"
+      "link": ["https://github.com/stanleyavril123/myPortfolio", "Github Repo"]
     },
     {
       "title": "Project 5",
@@ -43,7 +43,7 @@
       "languages": ["JavaScript", "React Native", "Java"],
       "cover": "test2.png",
       "images": [" "],
-      "repo": "https://github.com/stanleyavril123/myPortfolio"
+      "link": ["https://github.com/stanleyavril123/myPortfolio", "Github Repo"]
     },
     {
       "title": "Project 6",
@@ -52,7 +52,7 @@
       "languages": ["HTML", "CSS", "JavaScript"],
       "cover": "test2.png",
       "images": [" "],
-      "repo": "https://github.com/stanleyavril123/myPortfolio"
+      "link": ["https://github.com/stanleyavril123/myPortfolio", "Github Repo"]
     }
   ],
 

@@ -8,6 +8,7 @@ import {
 } from "@mui/material";
 import Slide from "@mui/material/Slide";
 import { forwardRef } from "react";
+import GitLink from "./GitLink.jsx";
 
 const SlideTransition = forwardRef(function SlideTransition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -73,12 +74,16 @@ const ProjectWindow = ({ openWindow, handleClose, selectedProject }) => {
           {selectedProject.title}
         </DialogTitle>
 
-        <Typography variant="body2" sx={{ marginLeft: 10 }}>
-          {selectedProject.description}
-        </Typography>
-        <a href={selectedProject.repo}>
-          <Typography>git</Typography>
-        </a>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            marginLeft: 10,
+          }}
+        >
+          <Typography variant="body2">{selectedProject.description}</Typography>
+          <GitLink repoLink={selectedProject.repo} />
+        </Box>
       </Box>
 
       <DialogContent>

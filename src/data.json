@@ -3,23 +3,14 @@
     {
       "title": "Porfolio Website",
       "description": "A modern and responsive portfolio website built with React and Material-UI. This project is designed to present my professional experience, skills, and projects in a smooth, user-friendly, and visually appealing manner. It provides a seamless experience for visitors to explore my journey and contact me effortlessly.",
-      "date": "2024",
-      "languages": ["React","Javascript", "MUI"],
-      "cover": "test.png",
-      "images": ["test3.png", "test.png"],
+      "date": "Winter 2024",
+      "languages": ["React", "Javascript", "MUI"],
+      "cover": "portfolioCover.png",
+      "images": ["portfolio1.png", "portfolioCover.png", "portfolio2.png"],
       "link": ["https://github.com/stanleyavril123/myPortfolio", "Github Repo"]
     },
     {
-      "title": "Project 2",
-      "description": "Description project 2",
-      "date": "Next Week",
-      "languages": ["Python", "JavaScript"],
-      "cover": "test2.png",
-      "images": [" "],
-      "link": ["https://github.com/stanleyavril123/myPortfolio", "Le Polyscope"]
-    },
-    {
-      "title": "Project 3",
+      "title": "Automated Pentesting",
       "description": "Description project 3",
       "date": "Next Month",
       "languages": ["JavaScript", "HTML", "CSS", "Node.js"],
@@ -27,6 +18,16 @@
       "images": [" "],
       "link": ["https://github.com/stanleyavril123/myPortfolio", "Github Repo"]
     },
+    {
+      "title": "Polyscope",
+      "description": "Contributed to enhancing the official university newspaper website, Le Polyscope, by designing and implementing new features using React and Firebase. Collaborated with a team to improve the user experience through responsive interfaces built with Material-UI. Gained hands-on experience in Agile development, sprint planning, and GitLab version control.",
+      "date": "Summer 2024",
+      "languages": ["React", "Javascript", "Firebase", "GitLab"],
+      "cover": "polyscopeCover.png",
+      "images": ["polyscope1.png", "polyscope2.png", "polyscope3.png"],
+      "link": ["https://www.polyscope.qc.ca/", "Le Polyscope"]
+    },
+
     {
       "title": "Project 4",
       "description": "Description project 4",
@@ -63,6 +64,4 @@
       "My journey includes contributing to challenging GitHub repositories and collaborating on a cybersecurity-focused startup, building a strong foundation in software design, problem-solving, and teamwork. Beyond coding, I’m an avid Brazilian jiu-jitsu practitioner, a fitness enthusiast, and a runner, always exploring creative hobbies and planning my next big idea."
     ]
   }
-
 }
-  

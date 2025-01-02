@@ -39,7 +39,8 @@ const ProjectWindow = ({ openWindow, handleClose, selectedProject }) => {
       sx={{
         "& .MuiDialog-paper": {
           maxHeight: "none",
-          height: "2500px",
+          background: "#eaeaea",
+          height: "2700px",
           overflow: "visible",
           width: "1200px",
           borderRadius: "12px",
@@ -79,10 +80,14 @@ const ProjectWindow = ({ openWindow, handleClose, selectedProject }) => {
             display: "flex",
             flexDirection: "column",
             marginLeft: 10,
+            paddingTop: "70px",
           }}
         >
           <Typography variant="body2">{selectedProject.description}</Typography>
-          <GitLink repoLink={selectedProject.link[0]} text={selectedProject.link[1]}/>
+          <GitLink
+            repoLink={selectedProject.link[0]}
+            text={selectedProject.link[1]}
+          />
         </Box>
       </Box>
 

@@ -56,7 +56,7 @@ function App() {
           width: "600px",
         }}
       >
-        <Stack spacing={15}>
+        <Stack spacing={5}>
           <About />
           <Skills />
           <Projects />

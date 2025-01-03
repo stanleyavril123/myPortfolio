@@ -65,7 +65,7 @@ const ProjectWindow = ({ openWindow, handleClose, selectedProject }) => {
         <DialogTitle
           variant="h5"
           sx={{
-            maxWidth: "550px",
+            maxWidth: "570px",
             wordWrap: "break-word",
             whiteSpace: "normal",
             overflow: "hidden",

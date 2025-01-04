@@ -12,8 +12,8 @@
     {
       "title": "Automated Pentesting",
       "description": "Description project 3",
-      "date": "Next Month",
-      "languages": ["JavaScript", "HTML", "CSS", "Node.js"],
+      "date": "Fall 2024 - Ongoing",
+      "languages": ["JavaScript","TSX","Node.js", "Express.js", "Flask API"],
       "cover": "test2.png",
       "images": [" "],
       "link": ["https://github.com/stanleyavril123/myPortfolio", "Github Repo"]
@@ -26,34 +26,6 @@
       "cover": "polyscopeCover.png",
       "images": ["polyscope1.png", "polyscope2.png", "polyscope3.png"],
       "link": ["https://www.polyscope.qc.ca/", "Le Polyscope"]
-    },
-
-    {
-      "title": "Project 4",
-      "description": "Description project 4",
-      "date": "Ongoing",
-      "languages": ["Python", "R"],
-      "cover": "test2.png",
-      "images": [" "],
-      "link": ["https://github.com/stanleyavril123/myPortfolio", "Github Repo"]
-    },
-    {
-      "title": "Project 5",
-      "description": "Description project 5",
-      "date": "Two Weeks from Now",
-      "languages": ["JavaScript", "React Native", "Java"],
-      "cover": "test2.png",
-      "images": [" "],
-      "link": ["https://github.com/stanleyavril123/myPortfolio", "Github Repo"]
-    },
-    {
-      "title": "Project 6",
-      "description": "Description project 6",
-      "date": "This Weekend",
-      "languages": ["HTML", "CSS", "JavaScript"],
-      "cover": "test2.png",
-      "images": [" "],
-      "link": ["https://github.com/stanleyavril123/myPortfolio", "Github Repo"]
     }
   ],
 

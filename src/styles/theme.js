@@ -36,6 +36,9 @@ const theme = createTheme({
       fontSize: "6rem",
       fontWeight: 600,
       color: "#f0201c",
+      "@media (max-width:1179px)": {
+        fontSize: "3rem",
+      },
     },
     body1: {
       fontSize: "0.7rem",

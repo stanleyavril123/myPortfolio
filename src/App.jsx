@@ -8,28 +8,32 @@ import About from "./components/About";
 import Skills from "./components/Skills";
 
 function App() {
-  const containerMaxWidth = 1200;
-  const halfContainerWidth = containerMaxWidth / 2;
-  const gapBetweenSections = 150;
-
   return (
     <Box
       sx={{
         minHeight: "100vh",
         display: "flex",
-        justifyContent: "center",
+        flexDirection: "column",
+        padding: 2,
+        "@media (min-width:1181px)": {
+          flexDirection: "row",
+          justifyContent: "center",
+          padding: 0,
+        },
       }}
     >
-      {/* Left */}
+      {/* Left Section */}
       <Box
         sx={{
-          position: "fixed",
-          top: "90px",
-          left: `calc(50% - ${halfContainerWidth}px - ${gapBetweenSections}px + 100px)`,
-          display: "flex",
-          flexDirection: "column",
-          gap: 2,
-          width: `${halfContainerWidth - gapBetweenSections}px`,
+          position: "static",
+          width: "100%",
+          "@media (min-width:1181px)": {
+            position: "fixed",
+            top: "90px",
+            left: "calc(50% - 612.5px)",
+            width: "300px",
+            spacing: "67px",
+          },
         }}
       >
         <Header />
@@ -37,13 +41,19 @@ function App() {
         <NavButton />
       </Box>
 
-      {/* Right */}
+      {/* Right Section */}
       <Box
         sx={{
-          marginLeft: `${halfContainerWidth + gapBetweenSections}px`,
-          paddingTop: "100px",
-          paddingBottom: "100px",
-          width: "600px",
+          marginLeft: 0,
+          width: "100%",
+          paddingTop: "20px",
+          paddingBottom: "20px",
+          "@media (min-width:1181px)": {
+            marginLeft: "625px",
+            width: "600px",
+            paddingTop: "100px",
+            paddingBottom: "100px",
+          },
         }}
       >
         <Stack spacing={5}>

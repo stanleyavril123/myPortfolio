@@ -1,0 +1,12 @@
+{
+  "files": {
+    "main.js": "/myPortfolio/static/js/main.801938ac.js",
+    "static/media/linkedin.png": "/myPortfolio/static/media/linkedin.a680cb8ad2b88be03d17.png",
+    "static/media/github.png": "/myPortfolio/static/media/github.1ff6d9646165b7f34af9.png",
+    "index.html": "/myPortfolio/index.html",
+    "main.801938ac.js.map": "/myPortfolio/static/js/main.801938ac.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.801938ac.js"
+  ]
+}

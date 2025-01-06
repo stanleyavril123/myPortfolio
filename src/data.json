@@ -1,5 +1,15 @@
 {
   "projects": [
+    
+    {
+      "title": "Automated Pentesting",
+      "description": "Developed a pentesting tool with features like web crawling, Nmap scanning, hidden directory detection, and subdomain discovery. The tool provides actionable feedback to improve website security and user experience. Collaborating with two peers to build an MVP, focusing on cybersecurity innovation and team-driven problem-solving.",
+      "date": "Fall 2024 - Ongoing",
+      "languages": ["JavaScript","TSX","Python","Node.js", "Express.js", "Flask API"],
+      "cover": "scantoolCover.png",
+      "images": ["scantool1.png", "scantool2.png", "scantool3.png"],
+      "link": ["https://github.com/stanleyavril123", "Private Github Repo"]
+    },
     {
       "title": "Porfolio Website",
       "description": "A modern and responsive portfolio website built with React and Material-UI. This project is designed to present my professional experience, skills, and projects in a smooth, user-friendly, and visually appealing manner. It provides a seamless experience for visitors to explore my journey and contact me effortlessly.",
@@ -7,15 +17,6 @@
       "languages": ["React", "Javascript", "MUI"],
       "cover": "portfolioCover.png",
       "images": ["portfolio1.png", "portfolioCover.png", "portfolio2.png"],
-      "link": ["https://github.com/stanleyavril123/myPortfolio", "Github Repo"]
-    },
-    {
-      "title": "Automated Pentesting",
-      "description": "Description project 3",
-      "date": "Fall 2024 - Ongoing",
-      "languages": ["JavaScript","TSX","Node.js", "Express.js", "Flask API"],
-      "cover": "test2.png",
-      "images": [" "],
       "link": ["https://github.com/stanleyavril123/myPortfolio", "Github Repo"]
     },
     {

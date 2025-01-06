@@ -40,7 +40,7 @@ const ProjectWindow = ({ openWindow, handleClose, selectedProject }) => {
         "& .MuiDialog-paper": {
           maxHeight: "none",
           background: "#eaeaea",
-          height: "2700px",
+          height: "2770px",
           overflow: "visible",
           width: "1200px",
           borderRadius: "12px",

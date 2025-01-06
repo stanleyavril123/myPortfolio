@@ -7,16 +7,6 @@ import NavButton from "./components/NavButton";
 import About from "./components/About";
 import Skills from "./components/Skills";
 
-// Hero Section
-//  ↓
-// Projects
-//  ↓
-// Skills
-//  ↓
-// About Me
-//  ↓
-// Contact
-
 function App() {
   const containerMaxWidth = 1200;
   const halfContainerWidth = containerMaxWidth / 2;

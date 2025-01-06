@@ -33,9 +33,9 @@ const Socials = () => (
     </a>
     <Button
       color="primary"
-      href="/CV_Stanley_Avril.pdf" // Link to the CV file in the public folder
-      download="Stanley_Avril_CV.pdf" // Suggested filename for the download
-      startIcon={<DownloadOutlinedIcon />} // Add an icon to the button
+      href="StanleyAvril_CV.pdf"
+      download="StanleyAvril_CV.pdf"
+      startIcon={<DownloadOutlinedIcon />}
       sx={{
         height: 24,
         backgroundColor: "black",

@@ -1,7 +1,7 @@
-import { Avatar, Box, Button } from "@mui/material";
+import {Avatar, Box} from "@mui/material";
 import githubImage from "../assets/github.png";
+import CVMenu from "./CvMenu.jsx";
 import linkedinImage from "../assets/linkedin.png";
-import DownloadOutlinedIcon from "@mui/icons-material/DownloadOutlined";
 import React from "react";
 
 const Socials = () => (
@@ -31,22 +31,8 @@ const Socials = () => (
         sx={{ width: 26, height: 26, borderRadius: "8px" }}
       />
     </a>
-    <Button
-      color="primary"
-      href="StanleyAvril_CV.pdf"
-      download="StanleyAvril_CV.pdf"
-      startIcon={<DownloadOutlinedIcon />}
-      sx={{
-        height: 24,
-        backgroundColor: "black",
-        color: "#faf6f3",
-        border: "1px solid black",
-        marginLeft: "8px",
-      }}
-    >
-      CV
-    </Button>
-  </Box>
+<CVMenu/>
+ </Box>
 );
 
 export default Socials;

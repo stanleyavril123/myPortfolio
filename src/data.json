@@ -1,14 +1,29 @@
 {
   "projects": [
-    
+{
+  "title": "CodeCell Live",
+    "description": "Real-time collaborative IDE that executes code inside isolated Firecracker microVMs orchestrated by a Go backend. React/TypeScript + Monaco UI with live presence; tRPC API and WebSocket streaming. Fast snapshot boot, per-session filesystem, and resource quotas for safety; currently Python-only, with multi-language support on the roadmap.",
+  "date": "Summer 2025 – Present",
+  "languages": ["TypeScript", "React", "Go", "Firecracker", "tRPC", "WebSocket", "Monaco Editor"],
+  "cover": "codecellCover.png",
+  "images": ["codecell1.png"],
+  "link": ["https://github.com/stanleyavril123/codecell-live", "Github Repo"]
+},
     {
-      "title": "Automated Pentesting",
-      "description": "Developed a pentesting tool with features like web crawling, Nmap scanning, hidden directory detection, and subdomain discovery. The tool provides actionable feedback to improve website security and user experience. Collaborating with two peers to build an MVP, focusing on cybersecurity innovation and team-driven problem-solving.",
-      "date": "Fall 2024 - Ongoing",
-      "languages": ["JavaScript","TSX","Python","Node.js", "Express.js", "Flask API"],
-      "cover": "scantoolCover.png",
-      "images": ["scantool1.png", "scantool2.png", "scantool3.png"],
-      "link": ["https://github.com/stanleyavril123", "Private Github Repo"]
+      "title": "Recon tool",
+      "description": "Designed a local web recon pipeline (React/Express/Flask, Nmap, Playwright) that discovers open services and pages, streams real-time progress, and outputs structured JSON for analysis. Shipped with team of three; emphasized safe, authorized-only scanning and a smooth developer UX.",
+      "date": "Fall 2024 - Winter 2025",
+      "languages": [
+        "JavaScript",
+        "TSX",
+        "Python",
+        "Node.js",
+        "Express.js",
+        "Flask API"
+      ],
+      "cover": "reconCover.png",
+      "images": ["recontool1.png", "recontool2.png"],
+      "link": ["https://github.com/stanleyavril123/sectool", "Github Repo"]
     },
     {
       "title": "Porfolio Website",
@@ -30,11 +45,15 @@
     }
   ],
 
-  "about": {
-    "about_me": [
-      "I'm a software engineering student passionate about building user-centered applications that combine clean design with scalable engineering for exceptional user experiences. I thrive at the intersection of creativity and technology, solving problems and bringing innovative ideas to life.",
-      "Currently, I’m working on full-stack development, cybersecurity, and machine learning projects, including a task manager app to boost productivity and a pentesting tool for automating website vulnerability assessments. These projects enhance my skills in creating robust software while addressing real-world challenges.",
-      "My journey includes contributing to challenging GitHub repositories and collaborating on a cybersecurity-focused startup, building a strong foundation in software design, problem-solving, and teamwork. Beyond coding, I’m an avid Brazilian jiu-jitsu practitioner, a fitness enthusiast, and a runner, always exploring creative hobbies and planning my next big idea."
-    ]
-  }
+"about": {
+  "about_me": [
+    "I’m a software engineering student at Polytechnique Montréal who loves building useful, user-friendly products. I care about clear, simple experiences that solve real problems and feel great to use.",
+    "Recently I’ve been creating two projects I’m proud of : a collaborative coding app where people can write and see results in real time, and a recon automation tool that speeds up the first stage of pentesting by scanning sites, crawling their pages, and surfacing hidden directories for review.",
+    "Last summer I completed a startup accelerator for a cybersecurity project. That experience sharpened how I scope ideas, ship quickly, and collaborate building a strong foundation in software design, problem-solving, and teamwork.",
+    "Beyond coding, I’m an avid Brazilian jiu-jitsu practitioner, a fitness enthusiast, and a runner. Those routines help me stay disciplined, keep a clear head, and keep exploring creative hobbies while planning my next big idea."
+  ]
+}
+
+
+
 }

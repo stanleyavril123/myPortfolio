@@ -4,16 +4,17 @@ import { Typography } from "@mui/material";
 
 const boldKeywords = [
   "software engineering student",
-  "full-stack development",
-  "cybersecurity",
-  "machine learning",
-  "task manager app",
-  "pentesting tool",
-  "challenging GitHub repositories",
-  "cybersecurity-focused startup",
+  "user-friendly products",
+  "collaborative coding app",
+  "recon automation tool",
+  "startup accelerator",
+  "cybersecurity project",
+  "software design",
   "problem-solving",
   "teamwork",
+  "Brazilian jiu-jitsu"
 ];
+
 
 function highlightText(text, keywords) {
   const regex = new RegExp(`\\b(${keywords.join("|")})\\b`, "gi");

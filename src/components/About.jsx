@@ -1,52 +1,42 @@
 import React from "react";
+import { Box, Typography } from "@mui/material";
+import SectionTitle from "./SectionTitle";
 import data from "../data.json";
-import { Typography } from "@mui/material";
-
-const boldKeywords = [
-  "software engineering student",
-  "user-friendly products",
-  "collaborative coding app",
-  "recon automation tool",
-  "startup accelerator",
-  "cybersecurity project",
-  "software design",
-  "problem-solving",
-  "teamwork",
-  "Brazilian jiu-jitsu"
-];
-
-
-function highlightText(text, keywords) {
-  const regex = new RegExp(`\\b(${keywords.join("|")})\\b`, "gi");
-  return text.split(regex).map((part, index) =>
-    keywords.includes(part.toLowerCase()) ? (
-      <strong key={index} style={{ color: "#f0201c" }}>
-        {part}
-      </strong>
-    ) : (
-      part
-    )
-  );
-}
 
 const { about } = data;
 
 export default function About() {
   return (
-    <div id="about">
-      <Typography variant="h2" sx={{ paddingBottom: "20px" }}>
+    <Box component="section" id="about" aria-labelledby="about-heading">
+      <SectionTitle id="about-heading" number="01">
         About
-      </Typography>
-
-      {about.about_me.map((text, index) => (
+      </SectionTitle>
+      <Box
+        sx={{
+          display: "grid",
+          gridTemplateColumns: { xs: "1fr", md: "1.1fr 0.9fr" },
+          gap: { xs: 2, md: 3 },
+        }}
+      >
         <Typography
-          key={index}
-          variant="body2"
-          sx={{ paddingLeft: "20px", paddingBottom: "10px" }}
+          variant="h3"
+          component="p"
+          sx={{
+            color: "secondary.main",
+            fontSize: { xs: "1.55rem", sm: "2rem" },
+            lineHeight: 1,
+          }}
         >
-          {highlightText(text, boldKeywords)}
+          I build software that can handle networks, hardware, real users, and messy constraints.
         </Typography>
-      ))}
-    </div>
+        <Box sx={{ display: "grid", gap: 1.35 }}>
+          {about.about_me.map((text) => (
+            <Typography key={text} variant="body2" sx={{ lineHeight: 1.55, fontWeight: 650 }}>
+              {text}
+            </Typography>
+          ))}
+        </Box>
+      </Box>
+    </Box>
   );
 }

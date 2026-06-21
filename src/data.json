@@ -1,59 +1,273 @@
 {
-  "projects": [
-{
-  "title": "CodeCell Live",
-    "description": "Real-time collaborative IDE that executes code inside isolated Firecracker microVMs orchestrated by a Go backend. React/TypeScript + Monaco UI with live presence; tRPC API and WebSocket streaming. Fast snapshot boot, per-session filesystem, and resource quotas for safety; currently Python-only, with multi-language support on the roadmap.",
-  "date": "Summer 2025 – Present",
-  "languages": ["TypeScript", "React", "Go", "Firecracker", "tRPC", "WebSocket", "Monaco Editor"],
-  "cover": "codecellCover.png",
-  "images": ["codecell1.png"],
-  "link": ["https://github.com/stanleyavril123/codecell-live", "Github Repo"]
-},
+  "contact": {
+    "name": "Stanley Avril",
+    "role": "Software Engineering Student",
+    "tagline": "Building reliable software across embedded systems, networked tools, full-stack products, and AI-assisted automation.",
+    "location": "Montreal, QC",
+    "email": "stanley.avril@outlook.com",
+    "website": "https://stanleyavril.dev",
+    "github": "https://github.com/stanleyavril123",
+    "linkedin": "https://www.linkedin.com/in/stanley-avril",
+    "resume": {
+      "en": "StanleyAvril_CV_EN.pdf",
+      "fr": "StanleyAvril_CV_FR.pdf"
+    }
+  },
+  "about": {
+    "about_me": [
+      "I am a software engineering student at Polytechnique Montreal, graduating in April 2027, with hands-on experience in embedded software, multi-link network communication systems, full-stack applications, and LLM-powered automation.",
+      "My recent work spans RPAS ground control tooling, MAVLink telemetry, ZeroTier and SATCOM connectivity, real-time dashboards, REST APIs, WebSocket systems, and data pipelines built with Python, TypeScript, C/C++, React, and NestJS.",
+      "I like projects where software has to meet real constraints: unreliable networks, hardware integration, concurrent users, structured data, and user interfaces that need to stay clear under pressure."
+    ]
+  },
+  "experience": [
     {
-      "title": "Recon tool",
-      "description": "Designed a local web recon pipeline (React/Express/Flask, Nmap, Playwright) that discovers open services and pages, streams real-time progress, and outputs structured JSON for analysis. Shipped with team of three; emphasized safe, authorized-only scanning and a smooth developer UX.",
-      "date": "Fall 2024 - Winter 2025",
-      "languages": [
-        "JavaScript",
-        "TSX",
-        "Python",
-        "Node.js",
-        "Express.js",
-        "Flask API"
+      "company": "Jaunt Air Mobility",
+      "role": "Software Engineering Intern - Flight Software and RPAS Communication Systems",
+      "date": "May 2026 - Aug 2026",
+      "location": "Montreal, QC",
+      "highlights": [
+        "Built a real-time network monitoring dashboard for a Windows GCS application in Python and Tkinter, surfacing quality, latency, and failover events across LTE, ZeroTier VPN, SATCOM, and Starlink links.",
+        "Implemented full session telemetry exports as annotated PNG and interactive HTML reports to support post-flight analysis.",
+        "Refactored a 1,500+ line monolithic GCS codebase into a structured Python package, improving maintainability and enabling modular tests.",
+        "Developed a Raspberry Pi MAVLink telemetry daemon reporting embedded system health and multi-link connectivity metrics to the GCS every 10 seconds through STATUSTEXT messages.",
+        "Designed ZeroTier failover tests measuring latency, jitter, and signal loss across LTE, Wi-Fi, and Iridium interfaces, with structured JSON result exports.",
+        "Integrated a Thales GATEWAY satellite uplink into the GCS position pipeline using MAVLink, mavlink-routerd, UDP, and REST APIs."
       ],
-      "cover": "reconCover.png",
-      "images": ["recontool1.png", "recontool2.png"],
-      "link": ["https://github.com/stanleyavril123/sectool", "Github Repo"]
+      "link": "https://jauntairmobility.com/"
     },
     {
-      "title": "Porfolio Website",
-      "description": "A modern and responsive portfolio website built with React and Material-UI. This project is designed to present my professional experience, skills, and projects in a smooth, user-friendly, and visually appealing manner. It provides a seamless experience for visitors to explore my journey and contact me effortlessly.",
-      "date": "Winter 2024",
-      "languages": ["React", "Javascript", "MUI"],
-      "cover": "portfolioCover.png",
-      "images": ["portfolio1.png", "portfolioCover.png", "portfolio2.png"],
-      "link": ["https://github.com/stanleyavril123/myPortfolio", "Github Repo"]
-    },
-    {
-      "title": "Polyscope",
-      "description": "Contributed to enhancing the official university newspaper website, Le Polyscope, by designing and implementing new features using React and Firebase. Collaborated with a team to improve the user experience through responsive interfaces built with Material-UI. Gained hands-on experience in Agile development, sprint planning, and GitLab version control.",
-      "date": "Summer 2024",
-      "languages": ["React", "Javascript", "Firebase", "GitLab"],
-      "cover": "polyscopeCover.png",
-      "images": ["polyscope1.png", "polyscope2.png", "polyscope3.png"],
-      "link": ["https://www.polyscope.qc.ca/", "Le Polyscope"]
+      "company": "Le Polyscope",
+      "role": "Web Developer",
+      "date": "May 2024 - Aug 2024",
+      "location": "Polytechnique Montreal",
+      "link": "https://www.polyscope.qc.ca/",
+      "highlights": [
+        "Developed and maintained React, JavaScript, Material UI, and Firebase features for the official student newspaper website.",
+        "Fixed JavaScript and CSS issues and improved interface consistency across mobile and desktop views.",
+        "Worked in an Agile team using sprints, tickets, GitLab CI, merge requests, and peer code reviews."
+      ]
     }
   ],
-
-"about": {
-  "about_me": [
-    "I’m a software engineering student at Polytechnique Montréal who loves building useful, user-friendly products. I care about clear, simple experiences that solve real problems and feel great to use.",
-    "Recently I’ve been creating two projects I’m proud of : a collaborative coding app where people can write and see results in real time, and a recon automation tool that speeds up the first stage of pentesting by scanning sites, crawling their pages, and surfacing hidden directories for review.",
-    "Last summer I completed a startup accelerator for a cybersecurity project. That experience sharpened how I scope ideas, ship quickly, and collaborate building a strong foundation in software design, problem-solving, and teamwork.",
-    "Beyond coding, I’m an avid Brazilian jiu-jitsu practitioner, a fitness enthusiast, and a runner. Those routines help me stay disciplined, keep a clear head, and keep exploring creative hobbies while planning my next big idea."
+  "skills": [
+    {
+      "category": "Languages",
+      "items": [
+        "Python",
+        "TypeScript",
+        "JavaScript",
+        "C/C++",
+        "SQL",
+        "Java"
+      ]
+    },
+    {
+      "category": "Systems & Network",
+      "items": [
+        "MAVLink",
+        "ZeroTier VPN",
+        "SATCOM",
+        "LTE",
+        "Raspberry Pi",
+        "AVR",
+        "UART",
+        "PWM",
+        "ADC",
+        "UDP",
+        "WebSocket"
+      ]
+    },
+    {
+      "category": "Frontend",
+      "items": [
+        "React",
+        "Angular",
+        "Material UI",
+        "Tkinter",
+        "Responsive UI"
+      ]
+    },
+    {
+      "category": "Backend",
+      "items": [
+        "NestJS",
+        "Node.js",
+        "Express",
+        "Flask",
+        "REST APIs",
+        "OAuth 2.0"
+      ]
+    },
+    {
+      "category": "Data & AI",
+      "items": [
+        "OpenAI API",
+        "PyTorch",
+        "pandas",
+        "NumPy",
+        "scikit-learn",
+        "Data pipelines"
+      ]
+    },
+    {
+      "category": "DevOps & Tools",
+      "items": [
+        "Git",
+        "GitHub",
+        "GitLab",
+        "GitLab CI/CD",
+        "Docker",
+        "Jest",
+        "Jasmine",
+        "PyInstaller",
+        "AWS"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "title": "CodeCell Live",
+      "summary": "Real-time collaborative IDE with live editing, stdout/stderr streaming, and isolated code execution through a Go backend and Firecracker microVMs.",
+      "description": "CodeCell Live is a web IDE for collaborative code editing and execution. It combines a React/TypeScript and Monaco frontend with tRPC, WebSocket streaming, a Go execution service, and Firecracker microVM isolation. The project focuses on fast session startup, shared editor state, resource boundaries, and typed service contracts.",
+      "date": "Jul 2025 - Present",
+      "stack": [
+        "React",
+        "TypeScript",
+        "tRPC",
+        "WebSocket",
+        "Go",
+        "Firecracker",
+        "Monaco"
+      ],
+      "cover": "codecellCover.png",
+      "images": [
+        "codecell1.png"
+      ],
+      "link": [
+        "https://github.com/stanleyavril123/codecell-live",
+        "GitHub Repo"
+      ],
+      "label": "Collaborative IDE / Runtime isolation",
+      "details": [
+        "Built a real-time editor experience with shared state, multi-user presence, and stdout/stderr streaming over WebSocket.",
+        "Designed the execution layer around a Go backend and Firecracker microVMs to isolate code sessions and enforce resource boundaries.",
+        "Used tRPC and shared TypeScript contracts to reduce integration drift between the editor, API, and runtime services."
+      ]
+    },
+    {
+      "title": "SMS Booking AI Agent",
+      "summary": "Semi-autonomous appointment booking agent that interprets inbound SMS messages and coordinates scheduling through LLM, Twilio, and Google Calendar integrations.",
+      "description": "A TypeScript and NestJS automation project using the OpenAI API to interpret natural-language SMS messages, validate booking intent, and orchestrate appointment scheduling. The backend integrates Twilio webhooks, Google Calendar OAuth 2.0, REST APIs, an object-oriented state machine, concurrency handling, and Jest tests.",
+      "date": "Dec 2025 - Present",
+      "stack": [
+        "TypeScript",
+        "NestJS",
+        "OpenAI API",
+        "Twilio",
+        "Google Calendar",
+        "OAuth 2.0",
+        "Jest"
+      ],
+      "label": "LLM automation / Scheduling workflow",
+      "details": [
+        "Interprets inbound SMS messages with an LLM and converts ambiguous user intent into structured booking actions.",
+        "Coordinates Twilio webhooks, Google Calendar OAuth, validation states, and REST endpoints through an object-oriented state machine.",
+        "Includes Jest coverage for the automation pipeline so scheduling behavior can be changed without breaking core flows."
+      ]
+    },
+    {
+      "title": "Authorized Recon Data Pipeline",
+      "summary": "Multi-service network data extraction pipeline that runs authorized Nmap scans and Playwright crawling, streams progress, and persists structured JSON results.",
+      "description": "A safe, authorized-only recon pipeline built with React, Node.js/Express, Flask, Nmap, Playwright, and WebSocket. The architecture separates scan and crawl APIs, coordinates them through a Node orchestrator, validates targets, streams real-time progress to the client, and saves raw structured data for analysis.",
+      "date": "Dec 2024 - Feb 2025",
+      "stack": [
+        "Python",
+        "Flask",
+        "Node.js",
+        "Express",
+        "React",
+        "Playwright",
+        "Nmap",
+        "WebSocket"
+      ],
+      "cover": "reconCover.png",
+      "images": [
+        "recontool1.png",
+        "recontool2.png"
+      ],
+      "link": [
+        "https://github.com/stanleyavril123/sectool",
+        "GitHub Repo"
+      ],
+      "label": "Network data pipeline / Authorized targets",
+      "details": [
+        "Orchestrates an Nmap scan and Playwright crawler across separate Flask services through a Node.js controller.",
+        "Streams live pipeline progress to the React client over WebSocket while persisting raw structured JSON output.",
+        "Implements target validation and safe authorized-only scanning boundaries for a smoother analysis workflow."
+      ]
+    },
+    {
+      "title": "AI Voice Detector",
+      "summary": "Audio data processing and machine learning pipeline for transforming raw sound data into structured features and classification experiments.",
+      "description": "A Python data and ML project using pandas, NumPy, PyTorch, and scikit-learn to ingest, clean, transform, and model audio data. The pipeline was structured with object-oriented stages and documented to make preprocessing, modeling choices, and results reproducible.",
+      "date": "Jun 2025",
+      "stack": [
+        "Python",
+        "PyTorch",
+        "pandas",
+        "scikit-learn",
+        "NumPy",
+        "Data processing"
+      ],
+      "label": "Audio data pipeline / ML classification",
+      "details": [
+        "Transforms raw audio data into structured feature sets with a reproducible pandas and NumPy processing pipeline.",
+        "Applies PyTorch and scikit-learn models for classification and pattern detection experiments.",
+        "Documents preprocessing, modeling decisions, and results so the pipeline can be reviewed and repeated."
+      ]
+    },
+    {
+      "title": "Multiplayer RPG Game",
+      "summary": "Full-stack multiplayer RPG built in a six-person Scrum team with real-time gameplay synchronization, MongoDB persistence, CI/CD, and automated tests.",
+      "description": "A LOG2990 integrator project developed across a complete software development lifecycle. The application combined an Angular frontend, NestJS backend, MongoDB persistence, Socket.IO real-time synchronization, OpenAPI documentation, GitLab CI pipelines, and unit/e2e test coverage.",
+      "date": "Sep 2025 - Dec 2025",
+      "label": "Full-stack game / Real-time systems",
+      "details": [
+        "Developed a full-stack Angular and NestJS multiplayer RPG with MongoDB persistence as part of a six-person Scrum team.",
+        "Implemented real-time synchronization with Socket.IO for gameplay state and concurrent user interactions.",
+        "Maintained GitLab CI pipelines, Jest/Jasmine unit and e2e tests, OpenAPI documentation, and code reviews through GitLab merge requests."
+      ],
+      "stack": [
+        "Angular",
+        "NestJS",
+        "TypeScript",
+        "MongoDB",
+        "Socket.IO",
+        "Jest",
+        "Jasmine",
+        "GitLab CI"
+      ]
+    },
+    {
+      "title": "Embedded Microcontroller System",
+      "summary": "Autonomous robot control project using embedded C/C++ on an AVR ATmega324PA with PWM motor control, ADC sensor input, UART, timers, and deterministic state-machine behavior.",
+      "description": "An embedded systems project built in C/C++ on an AVR ATmega324PA. The implementation encapsulated peripherals into reusable C++ classes, handled motor control through PWM, read sensors through ADC, used UART and timers, and integrated a state machine for deterministic autonomous navigation.",
+      "date": "Jan 2024 - May 2024",
+      "stack": [
+        "C/C++",
+        "AVR ATmega324PA",
+        "PWM",
+        "ADC",
+        "Timers",
+        "UART",
+        "State machines"
+      ],
+      "label": "Embedded control / Autonomous robot",
+      "details": [
+        "Implemented reusable C++ peripheral classes for motor control, sensor input, UART communication, timers, PWM, and ADC.",
+        "Built a deterministic navigation state machine balancing polling and interrupts for reliable sensor behavior.",
+        "Integrated and debugged the complete robot system incrementally against autonomous course performance tests."
+      ]
+    }
   ]
-}
-
-
-
 }

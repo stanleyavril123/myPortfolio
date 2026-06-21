@@ -5,64 +5,66 @@ import Socials from "./components/Socials";
 import Projects from "./components/Projects";
 import NavButton from "./components/NavButton";
 import About from "./components/About";
+import Experience from "./components/Experience";
 import Skills from "./components/Skills";
+import CustomCursor from "./components/CustomCursor";
 
 function App() {
   return (
-    <Box
+    <>
+      <CustomCursor />
+      <Box
       sx={{
         minHeight: "100vh",
-        display: "flex",
-        flexDirection: "column",
-        padding: 2,
-        "@media (min-width:1181px)": {
-          flexDirection: "row",
-          justifyContent: "center",
-          padding: 0,
-        },
+        px: { xs: 2.25, sm: 4, lg: 5 },
+        py: { xs: 3, sm: 5, lg: 6 },
       }}
     >
-      {/* Left Section */}
       <Box
         sx={{
-          position: "static",
-          width: "100%",
-          "@media (min-width:1181px)": {
-            position: "fixed",
-            top: "90px",
-            left: "calc(50% - 612.5px)",
-            width: "300px",
-            spacing: "67px",
-          },
+          maxWidth: 1320,
+          mx: "auto",
+          display: "grid",
+          gridTemplateColumns: { xs: "1fr", lg: "340px minmax(0, 1fr)" },
+          gap: { xs: 5, lg: 7 },
+          borderTop: "3px solid",
+          borderColor: "text.primary",
         }}
       >
-        <Header />
-        <Socials />
-        <NavButton />
-      </Box>
+        <Box
+          sx={{
+            position: { xs: "static", lg: "sticky" },
+            top: { lg: 32 },
+            alignSelf: { lg: "start" },
+            pt: { xs: 2, lg: 3 },
+          }}
+        >
+          <Header />
+          <Socials />
+          <NavButton />
+        </Box>
 
-      {/* Right Section */}
-      <Box
-        sx={{
-          marginLeft: 0,
-          width: "100%",
-          paddingTop: "20px",
-          paddingBottom: "20px",
-          "@media (min-width:1181px)": {
-            marginLeft: "625px",
-            width: "600px",
-            paddingTop: "100px",
-            paddingBottom: "100px",
-          },
-        }}
-      >
-        <Stack spacing={5}>
-          <About />
-          <Skills />
-          <Projects />
-        </Stack>
+        <Box
+          component="main"
+          sx={{
+            minWidth: 0,
+            pt: { xs: 1, lg: 3 },
+            pb: { xs: 4, lg: 8 },
+            borderLeft: { xs: 0, lg: "1px solid" },
+            borderColor: "divider",
+            pl: { xs: 0, lg: 6 },
+          }}
+        >
+          <Stack spacing={{ xs: 6, sm: 8 }}>
+            <About />
+            <Experience />
+            <Skills />
+            <Projects />
+          </Stack>
+        </Box>
       </Box>
-    </Box>
+      </Box>
+    </>
   );
 }
 

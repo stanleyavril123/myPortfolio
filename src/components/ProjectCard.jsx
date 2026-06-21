@@ -2,77 +2,102 @@ import React from "react";
 import { Box, Typography } from "@mui/material";
 import Language from "./Language";
 
-const ProjectCard = ({ title, description, date, languages, imagePath }) => {
+const getDisplayWords = (title) => title.split(" ").filter(Boolean).slice(0, 3);
+
+const ProjectVisual = ({ title, index }) => {
+  const number = String(index + 1).padStart(2, "0");
+  const words = getDisplayWords(title);
+
+  return (
+    <Box
+      aria-hidden="true"
+      sx={{
+        minHeight: { xs: 220, md: 280 },
+        backgroundColor: index % 2 === 0 ? "text.primary" : "secondary.main",
+        color: "background.paper",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-between",
+        p: 2,
+        overflow: "hidden",
+      }}
+    >
+      <Typography sx={{ fontSize: "0.78rem", fontWeight: 900, textTransform: "uppercase" }}>
+        selected project / {number}
+      </Typography>
+      <Box>
+        {words.map((word) => (
+          <Typography
+            key={word}
+            sx={{
+              display: "block",
+              fontSize: { xs: "2.55rem", md: "3.35rem" },
+              lineHeight: 0.8,
+              fontWeight: 900,
+              textTransform: "uppercase",
+            }}
+          >
+            {word}
+          </Typography>
+        ))}
+      </Box>
+    </Box>
+  );
+};
+
+const ProjectCard = ({ project, index }) => {
+  const number = String(index + 1).padStart(2, "0");
+
   return (
     <Box
       sx={{
-        display: "flex",
-        flexDirection: { xs: "row", sm: "row" },
-        alignItems: "flex-start",
-        gap: "20px",
-        cursor: "pointer",
-        marginBottom: "30px",
+        display: "grid",
+        gridTemplateColumns: { xs: "1fr", md: "minmax(240px, 0.78fr) 1fr" },
+        gap: { xs: 2, md: 3 },
+        py: { xs: 2.75, sm: 3.25 },
       }}
     >
-      <img
-        style={{
-          width: "125px",
-          height: "auto",
-          borderRadius: "5px",
-          border: "1px solid red",
-          display: "block",
-        }}
-        src={imagePath}
-        alt="Project"
-      />
-
-      <Box sx={{ flex: 1 }}>
+      <ProjectVisual title={project.title} index={index} />
+      <Box sx={{ minWidth: 0, alignSelf: "center" }}>
         <Box
           sx={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            marginBottom: "10px",
+            display: "grid",
+            gridTemplateColumns: "48px 1fr",
+            gap: 2,
+            alignItems: "baseline",
+            mb: 1.2,
           }}
         >
-          <Typography
-            variant="h5"
-            sx={{
-              fontSize: { xs: "16px", sm: "20px" },
-              fontWeight: "bold",
-            }}
-          >
-            {title}
+          <Typography variant="body1" sx={{ color: "secondary.main", fontWeight: 900 }}>
+            {number}
           </Typography>
-          <Typography
-            variant="subtitle1"
-            sx={{
-              fontSize: { xs: "14px", sm: "16px" },
-              marginLeft: "10px",
-            }}
-          >
-            {date}
-          </Typography>
+          <Box>
+            <Typography
+              variant="h3"
+              component="h3"
+              className="project-title"
+              sx={{ fontSize: { xs: "1.5rem", sm: "1.9rem" }, mb: 0.5 }}
+            >
+              {project.title}
+            </Typography>
+            <Typography variant="body1" sx={{ color: "text.secondary", fontWeight: 800 }}>
+              {project.date}
+            </Typography>
+          </Box>
         </Box>
-        <hr />
-        <Typography
-          variant="body2"
-          sx={{
-            marginBottom: "20px",
-            fontSize: { xs: "14px", sm: "16px" },
-          }}
-        >
-          {description}
+        <Typography variant="body2" sx={{ lineHeight: 1.58, fontWeight: 620, maxWidth: 720, mb: 1.4 }}>
+          {project.summary}
         </Typography>
-        <Box
-          sx={{
-            display: "flex",
-            flexWrap: "wrap",
-            gap: "10px",
-          }}
-        >
-          {languages.map((language, index) => (
-            <Language Language={language} key={index} />
+        <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.85 }}>
+          {project.stack.map((language, stackIndex) => (
+            <React.Fragment key={language}>
+              <Language label={language} />
+              {stackIndex < project.stack.length - 1 ? (
+                <Typography component="span" sx={{ color: "text.secondary", fontWeight: 800 }}>
+                  /
+                </Typography>
+              ) : null}
+            </React.Fragment>
           ))}
         </Box>
       </Box>

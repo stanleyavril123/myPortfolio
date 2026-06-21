@@ -1,33 +1,34 @@
 import React from "react";
-import { Link } from "@mui/material";
+import { Button } from "@mui/material";
+import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 
 const GitLink = ({ repoLink, text }) => {
-    return (
-    <Link
+  if (!repoLink) return null;
+
+  return (
+    <Button
       href={repoLink}
       target="_blank"
       rel="noopener noreferrer"
-      color="#f0201c"
-      aria-label="Open GitHub repository in a new tab"
+      endIcon={<OpenInNewIcon />}
       sx={{
-        display: "inline-flex",
-        alignItems: "center",
-        textDecoration: "none",
-        fontSize: "34px",
+        mt: 2,
+        borderRadius: 0,
+        border: "2px solid",
+        borderColor: "text.primary",
+        color: "text.primary",
+        backgroundColor: "transparent",
+        textTransform: "uppercase",
+        px: 1.5,
+        "&:hover": {
+          borderColor: "secondary.main",
+          backgroundColor: "secondary.main",
+          color: "background.paper",
+        },
       }}
     >
-      {text}
-      <span
-        className="material-symbols-outlined"
-        style={{
-          fontSize: "24px",
-          color: "#f0201c",
-          marginLeft: "5px",
-        }}
-      >
-        arrow_outward
-      </span>
-    </Link>
+      {text || "Open link"}
+    </Button>
   );
 };
 

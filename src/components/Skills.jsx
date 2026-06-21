@@ -1,70 +1,38 @@
-import React, { useState } from "react";
-import { Typography, Box } from "@mui/material";
-import { motion } from "framer-motion";
-import { FaReact, FaPython, FaJs, FaJava, FaGitAlt, FaRedhat, FaLinux} from "react-icons/fa";
-import CppIcon from "./svgIcon/CppIcon";
-import TsIcon from "./svgIcon/TsIcon";
+import React from "react";
+import { Box, Typography } from "@mui/material";
+import SectionTitle from "./SectionTitle";
+import data from "../data.json";
 
-const skills = [
-  { name: "Python", icon: <FaPython /> },
-  { name: "C++", icon: <CppIcon /> },
-  { name: "Java", icon: <FaJava /> },
-  { name: "React", icon: <FaReact /> },
-  { name: "JavaScript", icon: <FaJs /> },
-  { name: "TypeScript", icon: <TsIcon /> },
-  { name: "GitHub", icon: <FaGitAlt /> },
-  { name: "Pentesting", icon: <FaRedhat /> },
-  { name: "Linux", icon: <FaLinux /> },
-];
+const { skills } = data;
 
 export default function Skills() {
-  const [iconHovered, setIconHovered] = useState(null);
-
   return (
-    <div id="skills" style={{ marginTop: "40px" }}>
-      <Typography variant="h2" sx={{ paddingBottom: "20px", color: "#f0201c" }}>
+    <Box component="section" id="skills" aria-labelledby="skills-heading">
+      <SectionTitle id="skills-heading" number="03">
         Skills
-      </Typography>
-      <Box display="grid" gridTemplateColumns="repeat(3, 1fr)" gap={2}>
-        {skills.map((skill, index) => (
+      </SectionTitle>
+      <Box sx={{ display: "grid", gap: 2.25 }}>
+        {skills.map((group) => (
           <Box
-            key={index}
+            key={group.category}
             sx={{
-              textAlign: "center",
-              position: "relative",
+              display: "grid",
+              gridTemplateColumns: { xs: "1fr", sm: "170px 1fr" },
+              gap: { xs: 1, sm: 3 },
+              pb: 2.25,
+              borderBottom: "1px solid",
+              borderColor: "divider",
             }}
           >
-            <motion.div
-              onHoverStart={() => setIconHovered(index)}
-              onHoverEnd={() => setIconHovered(null)}
-              whileHover={{ scale: 1.2 }}
-              transition={{ duration: 0.3 }}
-              style={{
-                fontSize: "40px",
-                color: iconHovered === index ? "#f0201c" : "black",
-                fill: iconHovered === index ? "#f0201c" : "black",
-                marginBottom: "10px",
-              }}
-            >
-              {skill.icon}
-            </motion.div>
-
-            <motion.div
-              style={{
-                position: "absolute",
-                top: "60px",
-                left: "50%",
-                transform: "translateX(-50%)",
-                color: "black",
-                fontSize: "0.9rem",
-                opacity: iconHovered === index ? 1 : 0,
-              }}
-            >
-              {skill.name}
-            </motion.div>
+            <Typography variant="h3" component="h3" sx={{ color: "secondary.main" }}>
+              {group.category}
+            </Typography>
+            <Typography variant="body2" sx={{ lineHeight: 1.7, fontWeight: 650 }}>
+              {group.items.join(" / ")}
+            </Typography>
           </Box>
         ))}
       </Box>
-    </div>
+    </Box>
   );
 }

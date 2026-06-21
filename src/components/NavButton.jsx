@@ -1,50 +1,48 @@
-import { Stack, Typography } from "@mui/material";
+import { Box, Stack, Typography } from "@mui/material";
 import React from "react";
-import { motion } from "motion/react";
-import { useState } from "react";
 
-const navButton = ["ABOUT", "SKILLS", "PROJECTS"];
-const sectionIds = ["about", "skills", "projects"];
+const navItems = [
+  { number: "01", label: "ABOUT", href: "#about" },
+  { number: "02", label: "EXPERIENCE", href: "#experience" },
+  { number: "03", label: "SKILLS", href: "#skills" },
+  { number: "04", label: "PROJECTS", href: "#projects" },
+];
+
 export default function NavButton() {
-  const [hoveredIndex, setHoverIndex] = useState(null);
   return (
-    <nav>
-      <Stack direction="column" spacing={2}>
-        {navButton.map((lable, index) => (
-          <a
-            key={index}
-            href={`#${sectionIds[index]}`}
-            style={{
+    <Box component="nav" aria-label="Page sections">
+      <Stack direction="column" spacing={0.8}>
+        {navItems.map((item) => (
+          <Box
+            key={item.href}
+            component="a"
+            href={item.href}
+            sx={{
               textDecoration: "none",
-              color: "black",
-              position: "relative",
-            }}
-            onMouseEnter={() => {
-              setHoverIndex(index);
-              console.log(`hovering =  ${index}`);
-            }}
-            onMouseLeave={() => {
-              setHoverIndex(null);
-              console.log(`nolonger hovering =  ${index}`);
+              color: "text.primary",
+              display: "grid",
+              gridTemplateColumns: "38px 1fr",
+              gap: 1.5,
+              py: 0.35,
+              width: "fit-content",
+              "&:hover": {
+                color: "secondary.main",
+              },
+              "&:focus-visible": {
+                outline: "3px solid rgba(200, 32, 22, 0.3)",
+                outlineOffset: 3,
+              },
             }}
           >
-            <motion.div
-              className="square"
-              animate={
-                hoveredIndex === index
-                  ? {
-                      width: "50px",
-                    }
-                  : {}
-              }
-            />
-            <Typography variant="body2" display="inline">
-              {" "}
-              {lable}{" "}
+            <Typography variant="body1" sx={{ fontWeight: 900, color: "secondary.main" }}>
+              {item.number}
             </Typography>
-          </a>
+            <Typography variant="body1" sx={{ fontWeight: 900, textTransform: "uppercase" }}>
+              {item.label}
+            </Typography>
+          </Box>
         ))}
       </Stack>
-    </nav>
+    </Box>
   );
 }

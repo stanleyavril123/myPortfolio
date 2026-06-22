@@ -139,10 +139,6 @@
         "Firecracker",
         "Monaco"
       ],
-      "cover": "codecellCover.png",
-      "images": [
-        "codecell1.png"
-      ],
       "link": [
         "https://github.com/stanleyavril123/codecell-live",
         "GitHub Repo"
@@ -189,11 +185,6 @@
         "Playwright",
         "Nmap",
         "WebSocket"
-      ],
-      "cover": "reconCover.png",
-      "images": [
-        "recontool1.png",
-        "recontool2.png"
       ],
       "link": [
         "https://github.com/stanleyavril123/sectool",

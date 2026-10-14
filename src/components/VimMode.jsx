@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Box, Button, Dialog, Link, Portal } from "@mui/material";
 import { useLanguage } from "../locales/LanguageProvider";
-import { accentColors, surfaceColors } from "../styles/colors";
 
 const dotfilesUrl = "https://github.com/stanleyavril123/dotfiles";
 const mono = '"Courier New", Courier, monospace';
@@ -14,8 +13,8 @@ export function openHiddenMode() {
 function BufferLine({ number, children, heading = false }) {
   return (
     <Box sx={{ display: "grid", gridTemplateColumns: "3ch minmax(0, 1fr)", gap: { xs: 2, sm: 3 }, minHeight: "1.8em" }}>
-      <Box aria-hidden="true" sx={{ color: "#74877b", textAlign: "right", userSelect: "none" }}>{number}</Box>
-      <Box sx={{ color: heading ? "#cfe3d5" : "#dce4dc", fontWeight: heading ? 700 : 400, overflowWrap: "anywhere" }}>{children || "\u00a0"}</Box>
+      <Box aria-hidden="true" sx={{ color: "text.disabled", textAlign: "right", userSelect: "none" }}>{number}</Box>
+      <Box sx={{ color: heading ? "primary.main" : "text.primary", fontWeight: heading ? 700 : 400, overflowWrap: "anywhere" }}>{children || "\u00a0"}</Box>
     </Box>
   );
 }
@@ -24,15 +23,15 @@ function CommandBar({ command, invalid = false, fr, floating = false }) {
   return (
     <Box role="status" aria-label={fr ? "Barre de commande Vim" : "Vim command bar"}
       sx={{
-        ...(floating ? { position: "fixed", inset: "auto 0 0", zIndex: theme => theme.zIndex.modal + 1, borderTop: "1px solid #35473b", boxShadow: "0 -8px 30px rgba(0, 0, 0, 0.12)" } : {}),
+        ...(floating ? { position: "fixed", inset: "auto 0 0", zIndex: theme => theme.zIndex.modal + 1, borderTop: "1px solid", borderColor: "divider", boxShadow: "0 -8px 30px rgba(0, 0, 0, 0.12)" } : {}),
         minHeight: floating ? 44 : 32, px: floating ? { xs: 2, sm: 3 } : 2, py: 0.5,
-        backgroundColor: surfaceColors.dark, color: "#dce4dc", fontFamily: mono,
+        backgroundColor: "background.default", color: "text.primary", fontFamily: mono,
         fontSize: "0.85rem", display: "flex", alignItems: "center", gap: 1,
         paddingBottom: floating ? "max(4px, env(safe-area-inset-bottom))" : 0.5,
       }}>
       <Box component="span">{command || (fr ? "Lecture seule" : "Read only")}</Box>
-      {command && <Box component="span" aria-hidden="true" sx={{ width: "0.6em", height: "1.1em", backgroundColor: "#cfe3d5" }} />}
-      {command && <Box component="span" sx={{ ml: "auto", color: invalid ? "#ffb49a" : "#afbbb0", fontSize: "0.72rem", textAlign: "right" }}>
+      {command && <Box component="span" aria-hidden="true" sx={{ width: "0.6em", height: "1.1em", backgroundColor: "primary.main" }} />}
+      {command && <Box component="span" sx={{ ml: "auto", color: invalid ? "warning.main" : "text.secondary", fontSize: "0.72rem", textAlign: "right" }}>
         {invalid ? (fr ? "Commande inconnue" : "Unknown command") : (fr ? "Entrée : exécuter · Échap : annuler" : "Enter: run · Esc: cancel")}
       </Box>}
     </Box>
@@ -126,8 +125,8 @@ export default function VimMode() {
     setOpen(false);
   };
 
-  const linkSx = { color: accentColors.onDark, textDecorationColor: "#74877b", "&:focus-visible": { outline: "2px solid currentColor", outlineOffset: 3 } };
-  const tabSx = { fontFamily: mono, textTransform: "none", borderRadius: 0, px: 2, py: 1.5, minWidth: 0, color: "#afbbb0", "&:hover": { backgroundColor: "#222e26" } };
+  const linkSx = { color: "primary.main", textDecorationColor: "divider", "&:focus-visible": { outline: "2px solid currentColor", outlineOffset: 3 } };
+  const tabSx = { fontFamily: mono, textTransform: "none", borderRadius: 0, px: 2, py: 1.5, minWidth: 0, color: "text.secondary", "&:hover": { backgroundColor: "action.hover" } };
   const portfolioLines = [
     { text: `# ${data.contact.name}`, heading: true },
     { text: `${data.contact.role} | ${data.contact.location}` },
@@ -166,27 +165,27 @@ export default function VimMode() {
     <>
     {!open && command && <Portal><CommandBar command={command} invalid={invalidCommand} fr={fr} floating /></Portal>}
     <Dialog fullScreen open={open} disableEscapeKeyDown aria-labelledby="vim-mode-title"
-      PaperProps={{ sx: { backgroundColor: surfaceColors.dark, color: "#dce4dc", fontFamily: mono, borderRadius: 0, display: "flex", flexDirection: "column" } }}>
-      <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", px: { xs: 2, sm: 3 }, py: 1.5, borderBottom: "1px solid #35473b", gap: 1 }}>
+      PaperProps={{ sx: { backgroundColor: "background.default", color: "text.primary", fontFamily: mono, borderRadius: 0, display: "flex", flexDirection: "column" } }}>
+      <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", px: { xs: 2, sm: 3 }, py: 1.5, borderBottom: "1px solid", borderColor: "divider", gap: 1 }}>
         <Box id="vim-mode-title" component="h2" sx={{ m: 0, fontSize: "0.9rem", fontWeight: 400, fontFamily: mono }}>~/.config/stanley</Box>
         <Box sx={{ display: "flex", gap: 1 }}>
           <Button onClick={toggleLanguage} aria-label={fr ? "Switch to English" : "Passer en français"} sx={{ ...tabSx, p: 0.75 }}>{language.toUpperCase()}</Button>
           <Button onClick={closeMode} aria-label={fr ? "Quitter le mode caché" : "Exit hidden mode"} sx={{ ...tabSx, p: 0.75 }}>:q</Button>
         </Box>
       </Box>
-      <Box sx={{ display: "flex", borderBottom: "1px solid #35473b" }}>
+      <Box sx={{ display: "flex", borderBottom: "1px solid", borderColor: "divider" }}>
         {["dotfiles", "portfolio"].map(tab => (
           <Button key={tab} onClick={() => { setBuffer(tab); if (scrollArea.current) scrollArea.current.scrollTop = 0; }} aria-pressed={buffer === tab}
-            sx={{ ...tabSx, color: buffer === tab ? "#cfe3d5" : "#afbbb0", backgroundColor: buffer === tab ? "#222e26" : "transparent", borderBottom: buffer === tab ? "2px solid #cfe3d5" : "2px solid transparent" }}>{tab}.md</Button>
+            sx={{ ...tabSx, color: buffer === tab ? "primary.main" : "text.secondary", backgroundColor: buffer === tab ? "action.selected" : "transparent", borderBottom: "2px solid", borderColor: buffer === tab ? "primary.main" : "transparent" }}>{tab}.md</Button>
         ))}
       </Box>
       <Box ref={scrollArea} tabIndex={0} aria-label={buffer === "dotfiles" ? "Dotfiles" : "Portfolio"}
-        sx={{ flex: 1, overflowY: "auto", p: { xs: 2, sm: 4 }, fontSize: { xs: "0.8rem", sm: "0.95rem" }, lineHeight: 1.8, "&:focus-visible": { outline: "1px solid #74877b", outlineOffset: -1 } }}>
+        sx={{ flex: 1, overflowY: "auto", p: { xs: 2, sm: 4 }, fontSize: { xs: "0.8rem", sm: "0.95rem" }, lineHeight: 1.8, "&:focus-visible": { outline: "1px solid", outlineColor: "primary.main", outlineOffset: -1 } }}>
         {lines.map((line, index) => <BufferLine key={`${buffer}-${index}`} number={index + 1} heading={line.heading}>{line.text}</BufferLine>)}
-        <Box aria-hidden="true" sx={{ pl: { xs: "5ch", sm: "6ch" }, mt: 2, color: "#74877b", lineHeight: 2 }}>~<br />~<br />~</Box>
+        <Box aria-hidden="true" sx={{ pl: { xs: "5ch", sm: "6ch" }, mt: 2, color: "text.disabled", lineHeight: 2 }}>~<br />~<br />~</Box>
       </Box>
-      <Box sx={{ display: "flex", alignItems: "center", backgroundColor: "#35473b", color: "#f0f0e8", fontSize: "0.75rem", minHeight: 30 }}>
-        <Box sx={{ backgroundColor: "#cfe3d5", color: surfaceColors.dark, fontWeight: 700, px: 2, py: 0.5 }}>NORMAL</Box>
+      <Box sx={{ display: "flex", alignItems: "center", backgroundColor: "background.paper", color: "text.primary", borderTop: "1px solid", borderColor: "divider", fontSize: "0.75rem", minHeight: 30 }}>
+        <Box sx={{ backgroundColor: "primary.main", color: "primary.contrastText", fontWeight: 700, px: 2, py: 0.5 }}>NORMAL</Box>
         <Box sx={{ px: 2 }}>{buffer}.md</Box>
         <Button onClick={closeMode} aria-label={fr ? "Quitter (:q)" : "Quit (:q)"}
           sx={{ ...tabSx, ml: "auto", px: 2, py: 0.5, fontSize: "inherit", color: "inherit" }}>:q {fr ? "quitter" : "quit"}</Button>

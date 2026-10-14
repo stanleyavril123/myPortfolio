@@ -4,6 +4,23 @@ import "@testing-library/jest-dom";
 import VimMode from "./VimMode";
 import LanguageProvider from "../locales/LanguageProvider";
 import Projects from "./Projects";
+import ColorModeProvider from "../styles/ColorModeProvider";
+import ThemeToggle from "./ThemeToggle";
+
+test.each([
+  ["light", "#f0f0e8", "#202b23"],
+  ["dark", "#18221c", "#f0f0e8"],
+])("the command bar and Vim screen keep the %s site palette", async (mode, background, foreground) => {
+  localStorage.setItem("portfolio-color-mode", mode);
+  render(<ColorModeProvider><LanguageProvider><ThemeToggle /><VimMode /></LanguageProvider></ColorModeProvider>);
+  fireEvent.keyDown(window, { key: ":" });
+  expect(screen.getByRole("status", { name: "Vim command bar" })).toHaveStyle({ backgroundColor: background, color: foreground });
+  fireEvent.keyDown(window, { key: "w" });
+  fireEvent.keyDown(window, { key: "Enter" });
+  const dialog = await screen.findByRole("dialog");
+  expect(dialog).toHaveStyle({ backgroundColor: background, color: foreground });
+  expect(screen.getByRole("status", { name: "Vim command bar" })).toHaveStyle({ backgroundColor: background, color: foreground });
+});
 
 const command = (key, target = window) => {
   fireEvent.keyDown(target, { key: ":" });

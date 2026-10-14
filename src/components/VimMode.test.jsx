@@ -7,19 +7,19 @@ import Projects from "./Projects";
 import ColorModeProvider from "../styles/ColorModeProvider";
 import ThemeToggle from "./ThemeToggle";
 
-test.each([
-  ["light", "#f0f0e8", "#202b23"],
-  ["dark", "#18221c", "#f0f0e8"],
-])("the command bar and Vim screen keep the %s site palette", async (mode, background, foreground) => {
+test.each(["light", "dark"])("Vim stays dark without an elevation overlay when the site is %s", async mode => {
   localStorage.setItem("portfolio-color-mode", mode);
   render(<ColorModeProvider><LanguageProvider><ThemeToggle /><VimMode /></LanguageProvider></ColorModeProvider>);
   fireEvent.keyDown(window, { key: ":" });
-  expect(screen.getByRole("status", { name: "Vim command bar" })).toHaveStyle({ backgroundColor: background, color: foreground });
+  expect(screen.getByRole("status", { name: "Vim command bar" })).toHaveStyle({ backgroundColor: "#18221c", color: "#f0f0e8" });
   fireEvent.keyDown(window, { key: "w" });
   fireEvent.keyDown(window, { key: "Enter" });
   const dialog = await screen.findByRole("dialog");
-  expect(dialog).toHaveStyle({ backgroundColor: background, color: foreground });
-  expect(screen.getByRole("status", { name: "Vim command bar" })).toHaveStyle({ backgroundColor: background, color: foreground });
+  expect(dialog).toHaveStyle({ backgroundColor: "#18221c", backgroundImage: "none", color: "#f0f0e8" });
+  expect(screen.getByRole("status", { name: "Vim command bar" })).toHaveStyle({ backgroundColor: "#18221c", color: "#f0f0e8" });
+  command("q");
+  await waitFor(() => expect(screen.queryByRole("dialog")).not.toBeInTheDocument());
+  expect(localStorage.getItem("portfolio-color-mode")).toBe(mode);
 });
 
 const command = (key, target = window) => {

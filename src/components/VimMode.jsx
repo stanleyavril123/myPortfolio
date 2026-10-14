@@ -1,10 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Box, Button, Dialog, Link, Portal } from "@mui/material";
+import { Box, Button, Dialog, Link, Portal, ThemeProvider } from "@mui/material";
 import { useLanguage } from "../locales/LanguageProvider";
+import { createPortfolioTheme } from "../styles/theme";
 
 const dotfilesUrl = "https://github.com/stanleyavril123/dotfiles";
 const mono = '"Courier New", Courier, monospace';
 const discoverEvent = "portfolio:open-hidden-mode";
+const vimTheme = createPortfolioTheme("dark");
 
 export function openHiddenMode() {
   window.dispatchEvent(new Event(discoverEvent));
@@ -162,10 +164,10 @@ export default function VimMode() {
   const lines = buffer === "dotfiles" ? dotfilesLines : portfolioLines;
 
   return (
-    <>
+    <ThemeProvider theme={vimTheme}>
     {!open && command && <Portal><CommandBar command={command} invalid={invalidCommand} fr={fr} floating /></Portal>}
     <Dialog fullScreen open={open} disableEscapeKeyDown aria-labelledby="vim-mode-title"
-      PaperProps={{ sx: { backgroundColor: "background.default", color: "text.primary", fontFamily: mono, borderRadius: 0, display: "flex", flexDirection: "column" } }}>
+      PaperProps={{ elevation: 0, sx: { backgroundColor: "background.default", backgroundImage: "none", boxShadow: "none", color: "text.primary", fontFamily: mono, borderRadius: 0, display: "flex", flexDirection: "column" } }}>
       <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", px: { xs: 2, sm: 3 }, py: 1.5, borderBottom: "1px solid", borderColor: "divider", gap: 1 }}>
         <Box id="vim-mode-title" component="h2" sx={{ m: 0, fontSize: "0.9rem", fontWeight: 400, fontFamily: mono }}>~/.config/stanley</Box>
         <Box sx={{ display: "flex", gap: 1 }}>
@@ -192,6 +194,6 @@ export default function VimMode() {
       </Box>
       <CommandBar command={command} invalid={invalidCommand} fr={fr} />
     </Dialog>
-    </>
+    </ThemeProvider>
   );
 }

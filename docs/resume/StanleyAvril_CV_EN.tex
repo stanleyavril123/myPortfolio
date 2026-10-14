@@ -1,0 +1,49 @@
+\input{resume-style.tex}
+\hypersetup{pdftitle={Stanley Avril: Software Engineering Resume},pdflang={en-CA}}
+\begin{document}
+\header
+
+\section{Education}
+\entry{Polytechnique Montréal}{Expected fall 2027}{B.Eng., Software Engineering}{Montréal, QC}
+
+\section{Experience}
+\entry{Jaunt Air Mobility}{May 2026 to Present}{Software Engineering Intern: Flight Software and RPAS Communications}{Montréal, QC}
+\begin{itemize}
+  \item Built a Python/Tkinter dashboard so ground control operators could see connection quality and outages across LTE, ZeroTier VPN, SATCOM, and Starlink. Added PNG and HTML reports for reviewing telemetry after a flight.
+  \item Split a 1,500+ line Python ground control application into modules so individual features could be changed and tested without working through one large file.
+  \item Wrote a Python service on Raspberry Pi to send system health and connection status to the ground station every 10 seconds using MAVLink.
+  \item Connected a Thales GATEWAY satellite uplink to the aircraft position feed using UDP and REST APIs so ground control could receive positions through the satellite link.
+\end{itemize}
+\entry{Propolys}{May to Aug 2025}{Cohort Participant: Startup Accelerator}{Montréal, QC}
+\begin{itemize}
+  \item Interviewed 50+ users to decide what to build in an MVP. Built login, API, and dashboard features, then discussed progress with mentors and presented the demo.
+\end{itemize}
+\entry{Le Polyscope}{May to Aug 2024}{Web Developer: Polytechnique Student Newspaper}{Montréal, QC}
+\begin{itemize}
+  \item Updated the student newspaper website using React, JavaScript, HTML, CSS, and Firebase. Fixed layouts and interface issues so articles were easier to read on phones and computers.
+  \item Worked with the team in Agile sprints, using Git and GitLab merge requests to review fixes before merging them into the website.
+\end{itemize}
+
+\section{Selected Projects}
+\project{CodeCell Live: Collaborative Browser IDE}{Jul 2025 to Present}{React / TypeScript / Monaco / tRPC / WebSocket / Go / Firecracker\quad\href{https://github.com/stanleyavril123/codecell-live}{Code}}
+\begin{itemize}
+  \item Built a browser editor with React, TypeScript, and Monaco so users could work on the same code. Used WebSocket to share edits, cursor positions, and program output between clients.
+  \item Used Go and Firecracker to run Python in separate virtual machines so code runs stayed isolated. Added time and memory limits and cleaned up temporary files after execution.
+\end{itemize}
+\project{SpaceMind: Local Storage Assistant}{Jul 2026 to Present}{Rust / SQLite / BLAKE3 / Ollama\quad\href{https://github.com/stanleyavril123/spacemind}{Code}}
+\begin{itemize}
+  \item Wrote a Rust file scanner with BLAKE3 duplicate detection so users could see what was taking up disk space and review files before cleaning up.
+  \item Used SQL and SQLite to save scan history and review decisions. Added Ollama explanations from file metadata and file checks before confirmed Trash actions so users could review suggestions before changing files.
+\end{itemize}
+\project{SMS Booking AI Agent}{Dec 2025 to Jun 2026}{TypeScript / NestJS / Twilio / OpenAI / Google Calendar / Supabase\quad\href{https://stanleyavril.dev/\#projects}{Demo}}
+\begin{itemize}
+  \item Built a TypeScript/NestJS backend using Twilio and OpenAI so customers could request appointments by SMS. The agent asks for the service, address, and time, then requests confirmation.
+  \item Used the Google Calendar REST API to check availability and add confirmed appointments. Saved conversation state in Supabase and tested the booking flow with Jest and real phone messages.
+\end{itemize}
+
+\section{Skills}
+\textbf{Languages:} Python, TypeScript, C/C++, Go, Rust, JavaScript, SQL\\
+\textbf{Web \& Data:} React, HTML, CSS, NestJS, Node.js, WebSocket, tRPC, SQLite, Supabase, OpenAI API\\
+\textbf{Systems \& Tools:} MAVLink, ZeroTier VPN, SATCOM, Raspberry Pi, Git, Docker, GitLab CI/CD, Jest\\
+\textbf{Spoken languages:} French (native), English (fluent)
+\end{document}

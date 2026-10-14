@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { Button, Menu, MenuItem } from "@mui/material";
 import DownloadOutlinedIcon from "@mui/icons-material/DownloadOutlined";
-import data from "../data.json";
+import { useLanguage } from "../locales/LanguageProvider";
+import { radii } from "../styles/shape";
 
-const { resume } = data.contact;
 
 const CVMenu = () => {
+  const { data: { contact: { resume } }, ui } = useLanguage();
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
 
@@ -22,50 +23,47 @@ const CVMenu = () => {
         startIcon={<DownloadOutlinedIcon />}
         onClick={handleClick}
         sx={{
-          height: 36,
+          height: 40,
           px: 1.25,
-          borderRadius: 0,
           border: "1px solid",
-          borderColor: "text.primary",
-          backgroundColor: "text.primary",
+          borderColor: "primary.main",
+          backgroundColor: "primary.main",
           color: "background.paper",
           boxShadow: "none",
           textTransform: "uppercase",
           fontSize: "0.78rem",
+          fontFamily: "monospace",
           "&:hover": {
             backgroundColor: "secondary.main",
             borderColor: "secondary.main",
             boxShadow: "none",
           },
-          "&:focus-visible": {
-            outline: "3px solid rgba(200, 32, 22, 0.3)",
-            outlineOffset: 3,
-          },
         }}
       >
-        Resume
+        {ui.resume}
       </Button>
       <Menu
         id="resume-menu"
         anchorEl={anchorEl}
         open={open}
         onClose={handleClose}
-        MenuListProps={{ "aria-labelledby": "resume-menu-button" }}
+        MenuListProps={{ "aria-labelledby": "resume-menu-button", sx: { p: 1 } }}
         PaperProps={{
           sx: {
-            borderRadius: 0,
+            borderRadius: radii.menu,
             mt: 1,
             border: "1px solid",
-            borderColor: "text.primary",
+            borderColor: "divider",
             backgroundColor: "background.paper",
+            "& .MuiMenuItem-root": { borderRadius: radii.control },
           },
         }}
       >
         <MenuItem component="a" href={resume.en} download onClick={handleClose}>
-          English PDF
+          {ui.englishPdf}
         </MenuItem>
         <MenuItem component="a" href={resume.fr} download onClick={handleClose}>
-          French PDF
+          {ui.frenchPdf}
         </MenuItem>
       </Menu>
     </>

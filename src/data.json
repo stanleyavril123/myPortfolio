@@ -15,16 +15,16 @@
   },
   "about": {
     "about_me": [
-      "I am a software engineering student at Polytechnique Montreal, graduating in April 2027, with hands-on experience in embedded software, multi-link network communication systems, full-stack applications, and LLM-powered automation.",
-      "My recent work spans RPAS ground control tooling, MAVLink telemetry, ZeroTier and SATCOM connectivity, real-time dashboards, REST APIs, WebSocket systems, and data pipelines built with Python, TypeScript, C/C++, React, and NestJS.",
-      "I like projects where software has to meet real constraints: unreliable networks, hardware integration, concurrent users, structured data, and user interfaces that need to stay clear under pressure."
+      "I’m a software engineering student at Polytechnique Montréal, graduating in fall 2027. I work on embedded systems, web applications, and tools that connect the two.",
+      "At Jaunt Air Mobility, I build ground control tools and telemetry systems for remotely piloted aircraft. My own projects explore other problems: editing and running code together, making sense of disk usage, and booking appointments through a text conversation.",
+      "I enjoy figuring out what happens when things don’t go as planned: when a connection drops, hardware behaves unexpectedly, or several people use the same system. I care about making the result reliable and easy to understand."
     ]
   },
   "experience": [
     {
       "company": "Jaunt Air Mobility",
       "role": "Software Engineering Intern - Flight Software and RPAS Communication Systems",
-      "date": "May 2026 - Aug 2026",
+      "date": "May 2026 - Present",
       "location": "Montreal, QC",
       "highlights": [
         "Built a real-time network monitoring dashboard for a Windows GCS application in Python and Tkinter, surfacing quality, latency, and failover events across LTE, ZeroTier VPN, SATCOM, and Starlink links.",
@@ -55,10 +55,29 @@
       "items": [
         "Python",
         "TypeScript",
-        "JavaScript",
         "C/C++",
-        "SQL",
-        "Java"
+        "Go",
+        "Rust",
+        "JavaScript",
+        "SQL"
+      ]
+    },
+    {
+      "category": "Frontend",
+      "items": [
+        "React",
+        "Angular",
+        "Material UI"
+      ]
+    },
+    {
+      "category": "Backend",
+      "items": [
+        "NestJS",
+        "Node.js",
+        "REST APIs",
+        "WebSocket",
+        "tRPC"
       ]
     },
     {
@@ -67,68 +86,74 @@
         "MAVLink",
         "ZeroTier VPN",
         "SATCOM",
-        "LTE",
         "Raspberry Pi",
-        "AVR",
-        "UART",
-        "PWM",
-        "ADC",
-        "UDP",
-        "WebSocket"
-      ]
-    },
-    {
-      "category": "Frontend",
-      "items": [
-        "React",
-        "Angular",
-        "Material UI",
-        "Tkinter",
-        "Responsive UI"
-      ]
-    },
-    {
-      "category": "Backend",
-      "items": [
-        "NestJS",
-        "Node.js",
-        "Express",
-        "Flask",
-        "REST APIs",
-        "OAuth 2.0"
+        "AVR"
       ]
     },
     {
       "category": "Data & AI",
       "items": [
         "OpenAI API",
+        "Ollama",
+        "SQLite",
         "PyTorch",
-        "pandas",
-        "NumPy",
-        "scikit-learn",
-        "Data pipelines"
+        "pandas"
       ]
     },
     {
-      "category": "DevOps & Tools",
+      "category": "Tools & Testing",
       "items": [
         "Git",
-        "GitHub",
-        "GitLab",
-        "GitLab CI/CD",
         "Docker",
-        "Jest",
-        "Jasmine",
-        "PyInstaller",
-        "AWS"
+        "GitLab CI/CD",
+        "Jest"
       ]
     }
   ],
   "projects": [
     {
+      "title": "SpaceMind",
+      "media": {
+        "kind": "video",
+        "src": "/demos/spacemind-demo.mp4",
+        "poster": "/demos/spacemind-poster.png",
+        "aspectRatio": "1064 / 728",
+        "sampleData": true
+      },
+      "summary": "A local storage assistant that helps you understand disk usage, find duplicate files, and review cleanup candidates without uploading your files.",
+      "description": "SpaceMind turns a filesystem scan into an interactive terminal explorer for reviewing disk usage, duplicates, and cleanup candidates. Scan history and review decisions are saved locally; optional AI explanations use metadata, and file actions require confirmation and a fresh check that the files have not changed.",
+      "date": "Jul 2026 - Present",
+      "stack": [
+        "Rust",
+        "SQLite",
+        "Ollama",
+        "BLAKE3",
+        "Crossterm",
+        "Clap"
+      ],
+      "link": [
+        "https://github.com/stanleyavril123/spacemind",
+        "GitHub Repo"
+      ],
+      "label": "Storage analysis / Local AI",
+      "details": [
+        "Built a modular Rust workspace for local filesystem scanning, deterministic cleanup recommendations, relationship analysis, and hard-link-aware exact duplicate detection with BLAKE3.",
+        "Developed an interactive terminal explorer and grouped review queue with SQLite persistence for scan history and saved review decisions.",
+        "Integrated optional Ollama explanations using filesystem metadata while keeping file contents local and cleanup decisions under user control.",
+        "Implemented protected paths, ignore rules, and confirmed Trash actions that revalidate file identity and metadata before making changes."
+      ]
+    },
+    {
       "title": "CodeCell Live",
-      "summary": "Real-time collaborative IDE with live editing, stdout/stderr streaming, and isolated code execution through a Go backend and Firecracker microVMs.",
-      "description": "CodeCell Live is a web IDE for collaborative code editing and execution. It combines a React/TypeScript and Monaco frontend with tRPC, WebSocket streaming, a Go execution service, and Firecracker microVM isolation. The project focuses on fast session startup, shared editor state, resource boundaries, and typed service contracts.",
+      "media": {
+        "kind": "video",
+        "src": "/demos/codecell-demo.mp4",
+        "poster": "/demos/codecell-poster.png",
+        "aspectRatio": "16 / 9",
+        "captionKey": "collaborationDemo"
+      },
+      "summary": "A collaborative browser IDE where multiple users edit together and run Python in isolated Firecracker microVMs.",
+      "description": "CodeCell Live lets people work in the same editor, see each other’s changes, and follow execution output in real time. A Go execution service runs code in isolated Firecracker microVMs with resource limits, while shared TypeScript contracts keep the editor and backend in sync.",
       "date": "Jul 2025 - Present",
       "stack": [
         "React",
@@ -152,29 +177,38 @@
     },
     {
       "title": "SMS Booking AI Agent",
-      "summary": "Semi-autonomous appointment booking agent that interprets inbound SMS messages and coordinates scheduling through LLM, Twilio, and Google Calendar integrations.",
-      "description": "A TypeScript and NestJS automation project using the OpenAI API to interpret natural-language SMS messages, validate booking intent, and orchestrate appointment scheduling. The backend integrates Twilio webhooks, Google Calendar OAuth 2.0, REST APIs, an object-oriented state machine, concurrency handling, and Jest tests.",
-      "date": "Dec 2025 - Present",
+      "media": {
+        "kind": "video",
+        "src": "/demos/sms-booking-demo.mp4",
+        "poster": "/demos/sms-booking-poster.png",
+        "aspectRatio": "40 / 27",
+        "captionKey": "smsBookingDemo",
+        "noteKey": "smsBookingTimeNote"
+      },
+      "summary": "An SMS agent that turns a conversation into a confirmed Google Calendar appointment—from collecting the address to checking availability and booking.",
+      "description": "Customers text a Twilio number, provide the service, address, and preferred time, then reply YES to confirm. The agent checks Google Calendar availability, creates the appointment, and sends a confirmation back to the phone. OpenAI helps extract booking details and ask follow-up questions; a conversation state machine tracks each step.",
+      "date": "Dec 2025 - Jun 2026",
       "stack": [
         "TypeScript",
         "NestJS",
         "OpenAI API",
         "Twilio",
         "Google Calendar",
-        "OAuth 2.0",
+        "Supabase",
         "Jest"
       ],
-      "label": "LLM automation / Scheduling workflow",
+      "label": "Two-way SMS / Calendar booking",
       "details": [
-        "Interprets inbound SMS messages with an LLM and converts ambiguous user intent into structured booking actions.",
-        "Coordinates Twilio webhooks, Google Calendar OAuth, validation states, and REST endpoints through an object-oriented state machine.",
-        "Includes Jest coverage for the automation pipeline so scheduling behavior can be changed without breaking core flows."
+        "Connected Twilio's inbound SMS webhook to a NestJS conversation service and sent replies back to the customer's phone through the Twilio API.",
+        "Collected the requested service, address, and preferred time through a multi-message conversation, with optional OpenAI extraction and follow-ups and explicit YES/NO confirmation.",
+        "Checked calendar availability when the customer confirmed, created the Google Calendar event with service-account authentication, and closed the conversation after booking.",
+        "Persisted business, customer, and conversation state in Supabase and added Jest tests for the conversation flow and service integrations."
       ]
     },
     {
       "title": "Authorized Recon Data Pipeline",
-      "summary": "Multi-service network data extraction pipeline that runs authorized Nmap scans and Playwright crawling, streams progress, and persists structured JSON results.",
-      "description": "A safe, authorized-only recon pipeline built with React, Node.js/Express, Flask, Nmap, Playwright, and WebSocket. The architecture separates scan and crawl APIs, coordinates them through a Node orchestrator, validates targets, streams real-time progress to the client, and saves raw structured data for analysis.",
+      "summary": "A tool that combines network scans and website crawling into structured results, with live progress updates for authorized targets.",
+      "description": "The pipeline coordinates a network scan and a website crawl, shows their progress in the browser, and saves the results as JSON for analysis. Separate services handle scanning and crawling, while an orchestrator validates targets and manages the workflow.",
       "date": "Dec 2024 - Feb 2025",
       "stack": [
         "Python",
@@ -199,8 +233,8 @@
     },
     {
       "title": "AI Voice Detector",
-      "summary": "Audio data processing and machine learning pipeline for transforming raw sound data into structured features and classification experiments.",
-      "description": "A Python data and ML project using pandas, NumPy, PyTorch, and scikit-learn to ingest, clean, transform, and model audio data. The pipeline was structured with object-oriented stages and documented to make preprocessing, modeling choices, and results reproducible.",
+      "summary": "An audio classification project that turns raw recordings into structured features for machine learning experiments.",
+      "description": "This project organizes audio preprocessing, feature extraction, and classification experiments into a reproducible Python pipeline. Each stage and modeling choice is documented so the processing and results can be reviewed and repeated.",
       "date": "Jun 2025",
       "stack": [
         "Python",
@@ -219,8 +253,8 @@
     },
     {
       "title": "Multiplayer RPG Game",
-      "summary": "Full-stack multiplayer RPG built in a six-person Scrum team with real-time gameplay synchronization, MongoDB persistence, CI/CD, and automated tests.",
-      "description": "A LOG2990 integrator project developed across a complete software development lifecycle. The application combined an Angular frontend, NestJS backend, MongoDB persistence, Socket.IO real-time synchronization, OpenAPI documentation, GitLab CI pipelines, and unit/e2e test coverage.",
+      "summary": "A multiplayer RPG built with a six-person team, with shared game state synchronized in real time.",
+      "description": "Built for the LOG2990 integrator course, this game connects a web interface to a backend that synchronizes gameplay and persists data. Our six-person Scrum team worked through the full development cycle, using code reviews, automated tests, and CI pipelines to integrate changes.",
       "date": "Sep 2025 - Dec 2025",
       "label": "Full-stack game / Real-time systems",
       "details": [
@@ -241,8 +275,8 @@
     },
     {
       "title": "Embedded Microcontroller System",
-      "summary": "Autonomous robot control project using embedded C/C++ on an AVR ATmega324PA with PWM motor control, ADC sensor input, UART, timers, and deterministic state-machine behavior.",
-      "description": "An embedded systems project built in C/C++ on an AVR ATmega324PA. The implementation encapsulated peripherals into reusable C++ classes, handled motor control through PWM, read sensors through ADC, used UART and timers, and integrated a state machine for deterministic autonomous navigation.",
+      "summary": "An autonomous robot that reads sensors and controls its motors through embedded C/C++ on an AVR microcontroller.",
+      "description": "This project connects sensor readings, motor control, and a navigation state machine to guide a robot through an autonomous course. Reusable C++ classes manage the peripherals, and incremental hardware tests help verify the complete system.",
       "date": "Jan 2024 - May 2024",
       "stack": [
         "C/C++",

@@ -2,17 +2,17 @@ import React from "react";
 import { Box, Link, Typography } from "@mui/material";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import SectionTitle from "./SectionTitle";
-import data from "../data.json";
+import { useLanguage } from "../locales/LanguageProvider";
 
-const { experience } = data;
 
 export default function Experience() {
+  const { data: { experience }, ui } = useLanguage();
   return (
     <Box component="section" id="experience" aria-labelledby="experience-heading">
       <SectionTitle id="experience-heading" number="02">
-        Experience
+        {ui.experience}
       </SectionTitle>
-      <Box sx={{ display: "grid", gap: 0, borderTop: "2px solid", borderColor: "text.primary" }}>
+      <Box sx={{ display: "grid", gap: 0 }}>
         {experience.map((item, index) => (
           <Box
             component="article"
@@ -22,22 +22,23 @@ export default function Experience() {
               gridTemplateColumns: { xs: "1fr", md: "150px 1fr" },
               gap: { xs: 1.5, md: 3 },
               py: { xs: 2.5, sm: 3 },
-              borderBottom: "2px solid",
-              borderColor: "text.primary",
+              borderBottom: "1px solid",
+              borderColor: "divider",
             }}
           >
             <Box>
               <Typography
                 sx={{
                   color: "secondary.main",
-                  fontSize: "2.1rem",
+                  fontSize: "0.85rem",
+                  fontFamily: "monospace",
                   lineHeight: 0.9,
-                  fontWeight: 900,
+                  fontWeight: 400,
                 }}
               >
                 0{index + 1}
               </Typography>
-              <Typography variant="body1" sx={{ mt: 1, fontWeight: 900, textTransform: "uppercase" }}>
+              <Typography variant="body1" sx={{ mt: 1, fontFamily: "monospace", textTransform: "uppercase" }}>
                 {item.date}
               </Typography>
             </Box>
@@ -64,20 +65,21 @@ export default function Experience() {
                       display: "inline-flex",
                       alignItems: "center",
                       gap: 0.5,
-                      fontWeight: 900,
+                      fontWeight: 400,
+                      fontFamily: "monospace",
                       textDecoration: "none",
                       textTransform: "uppercase",
                     }}
                   >
-                    Site
+                    {ui.site}
                     <OpenInNewIcon sx={{ fontSize: 15 }} />
                   </Link>
                 ) : null}
               </Box>
-              <Typography variant="body2" sx={{ fontWeight: 900, mb: 0.5, textTransform: "uppercase" }}>
+              <Typography variant="body2" sx={{ fontWeight: 500, mb: 0.75 }}>
                 {item.role}
               </Typography>
-              <Typography variant="body1" sx={{ color: "text.secondary", fontWeight: 800, mb: 1.5 }}>
+              <Typography variant="body1" sx={{ color: "text.secondary", fontFamily: "monospace", mb: 2 }}>
                 {item.location}
               </Typography>
               <Box component="ul" sx={{ m: 0, pl: 2.2 }}>
@@ -86,7 +88,7 @@ export default function Experience() {
                     key={highlight}
                     component="li"
                     variant="body2"
-                    sx={{ mb: 0.75, lineHeight: 1.48, fontWeight: 600 }}
+                    sx={{ mb: 1.25, lineHeight: 1.7, fontWeight: 400, color: "text.secondary" }}
                   >
                     {highlight}
                   </Typography>

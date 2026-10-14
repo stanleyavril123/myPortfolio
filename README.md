@@ -8,6 +8,9 @@ Personal portfolio for Stanley Avril, a software engineering student at Polytech
 - Recruiter-focused About, Experience, Skills, and Projects sections
 - Accessible project cards with detail dialogs
 - Resume downloads in English and French
+- French/English switching and light/dark themes
+- Custom ASCII project artwork and recorded demos inside project details
+- Hidden Vim mode: type `:w` and press Enter to open, `:q` and Enter to exit
 - Direct email, GitHub, and LinkedIn contact actions
 
 ## Technology
@@ -34,8 +37,24 @@ npm run build
 
 ## Deployment
 
+Run the checks before publishing:
+
+```bash
+CI=true npm test -- --watchAll=false --runInBand
+npm run build
+```
+
+Publish the build to the `gh-pages` branch:
+
 ```bash
 npm run deploy
 ```
 
-The live site is configured for `https://stanleyavril.dev`.
+The live site is configured for `https://stanleyavril.dev`; `public/CNAME`
+preserves that domain in each build. Pushing `main` updates the source;
+`npm run deploy` publishes the website.
+
+Editable résumé sources are in `docs/resume`. Demo provenance is documented
+in `docs/project-demos.md`. Local environment files, raw phone recordings,
+and Python caches are excluded from Git. Only edited demo assets in
+`public/demos` are published.

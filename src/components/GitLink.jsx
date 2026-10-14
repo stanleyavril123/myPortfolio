@@ -1,8 +1,10 @@
 import React from "react";
+import { useLanguage } from "../locales/LanguageProvider";
 import { Button } from "@mui/material";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 
 const GitLink = ({ repoLink, text }) => {
+  const { ui } = useLanguage();
   if (!repoLink) return null;
 
   return (
@@ -13,10 +15,10 @@ const GitLink = ({ repoLink, text }) => {
       endIcon={<OpenInNewIcon />}
       sx={{
         mt: 2,
-        borderRadius: 0,
-        border: "2px solid",
-        borderColor: "text.primary",
-        color: "text.primary",
+        border: "1px solid",
+        borderColor: "secondary.main",
+        color: "secondary.main",
+        fontFamily: "monospace",
         backgroundColor: "transparent",
         textTransform: "uppercase",
         px: 1.5,
@@ -27,7 +29,7 @@ const GitLink = ({ repoLink, text }) => {
         },
       }}
     >
-      {text || "Open link"}
+      {text || ui.openLink}
     </Button>
   );
 };

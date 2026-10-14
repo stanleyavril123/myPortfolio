@@ -7,19 +7,18 @@ import NavButton from "./components/NavButton";
 import About from "./components/About";
 import Experience from "./components/Experience";
 import Skills from "./components/Skills";
-import CustomCursor from "./components/CustomCursor";
+import VimMode from "./components/VimMode";
 
 function App() {
   return (
-    <>
-      <CustomCursor />
-      <Box
+    <Box
       sx={{
         minHeight: "100vh",
         px: { xs: 2.25, sm: 4, lg: 5 },
-        py: { xs: 3, sm: 5, lg: 6 },
+        py: { xs: 3, sm: 5, lg: 7 },
       }}
     >
+      <VimMode />
       <Box
         sx={{
           maxWidth: 1320,
@@ -27,8 +26,8 @@ function App() {
           display: "grid",
           gridTemplateColumns: { xs: "1fr", lg: "340px minmax(0, 1fr)" },
           gap: { xs: 5, lg: 7 },
-          borderTop: "3px solid",
-          borderColor: "text.primary",
+          borderTop: "1px solid",
+          borderColor: "divider",
         }}
       >
         <Box
@@ -55,7 +54,7 @@ function App() {
             pl: { xs: 0, lg: 6 },
           }}
         >
-          <Stack spacing={{ xs: 6, sm: 8 }}>
+          <Stack spacing={{ xs: 8, sm: 12 }}>
             <About />
             <Experience />
             <Skills />
@@ -63,8 +62,7 @@ function App() {
           </Stack>
         </Box>
       </Box>
-      </Box>
-    </>
+    </Box>
   );
 }
 

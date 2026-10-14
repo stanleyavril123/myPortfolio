@@ -1,121 +1,65 @@
-import React, { useState } from "react";
-import { Box, Card, CardActionArea, Stack } from "@mui/material";
+import React from "react";
+import { Box, Card, CardActionArea, Divider, Stack, useMediaQuery } from "@mui/material";
 import SectionTitle from "./SectionTitle";
 import ProjectCard from "./ProjectCard.jsx";
-import data from "../data.json";
+import { useLanguage } from "../locales/LanguageProvider";
 import ProjectWindow from "./ProjectWindow.jsx";
+import useProjectDrawer from "./useProjectDrawer";
+import { radii, focusRing } from "../styles/shape";
+import { openHiddenMode } from "./VimMode";
 
 export default function Projects() {
-  const { projects } = data;
-  const [drawerProject, setDrawerProject] = useState(null);
-  const [pendingProject, setPendingProject] = useState(null);
-  const [drawerState, setDrawerState] = useState("closed");
-  const [motionMode, setMotionMode] = useState("peek");
+  const { data: { projects }, ui } = useLanguage();
+  const { drawer, dispatch } = useProjectDrawer();
+  const canHover = useMediaQuery("(hover: hover) and (pointer: fine)");
 
   const withIndex = (project, index) => ({ ...project, index });
-  const isSameProject = (a, b) => a?.title === b?.title;
 
   const handleOpen = (project, index) => {
-    setPendingProject(null);
-    setMotionMode("poster");
-    setDrawerProject(withIndex(project, index));
-    setDrawerState("open");
+    dispatch({ type: "open", project: withIndex(project, index) });
   };
 
   const handleHoverStart = (project, index) => {
-    if (drawerState === "open") return;
-
-    const nextProject = withIndex(project, index);
-
-    if (!drawerProject) {
-      setMotionMode("peek");
-      setDrawerProject(nextProject);
-      setDrawerState("peek");
-      return;
-    }
-
-    if (isSameProject(drawerProject, nextProject)) {
-      setPendingProject(null);
-      if (drawerState === "closed") {
-        setMotionMode("peek");
-        setDrawerState("peek");
-      }
-      return;
-    }
-
-    setMotionMode("peek");
-    setPendingProject(nextProject);
-    setDrawerState("closed");
+    if (canHover) dispatch({ type: "hover", project: withIndex(project, index) });
   };
 
   const handleHoverEnd = () => {
-    if (drawerState === "peek") {
-      setMotionMode("peek");
-      setDrawerState("closed");
-      return;
-    }
-
-    if (drawerState === "closed") {
-      setPendingProject(null);
-    }
+    dispatch({ type: "leave" });
   };
 
   const handleClose = () => {
-    setMotionMode("poster");
-    setPendingProject(null);
-    setDrawerState("closed");
-  };
-
-  const handleExited = () => {
-    if (pendingProject) {
-      setMotionMode("peek");
-      setDrawerProject(pendingProject);
-      setPendingProject(null);
-      window.requestAnimationFrame(() => setDrawerState("peek"));
-      return;
-    }
-
-    setDrawerProject(null);
+    dispatch({ type: "close" });
   };
 
   return (
     <Box component="section" id="projects" aria-labelledby="projects-heading">
       <SectionTitle id="projects-heading" number="04">
-        Projects
+        {ui.projects}
       </SectionTitle>
-      <Stack spacing={0}>
+      <Stack spacing={2} divider={<Divider />}>
         {projects.map((project, index) => (
           <Card
-            key={project.title}
+            key={project.sourceTitle || project.title}
             elevation={0}
-            square
             onMouseEnter={() => handleHoverStart(project, index)}
             onMouseLeave={handleHoverEnd}
             sx={{
               backgroundColor: "transparent",
-              borderBottom: "1px solid",
-              borderColor: "divider",
+              borderRadius: radii.panel,
               boxShadow: "none",
               overflow: "visible",
             }}
           >
             <CardActionArea
               onClick={() => handleOpen(project, index)}
-              aria-label={`Open details for ${project.title}`}
+              aria-label={`${ui.openProject} ${project.title}`}
               sx={{
-                alignItems: "stretch",
                 textAlign: "left",
-                px: 0,
-                "&:hover": {
-                  backgroundColor: "transparent",
-                  "& .project-title": {
-                    color: "secondary.main",
-                  },
-                },
-                "&:focus-visible": {
-                  outline: "3px solid rgba(200, 32, 22, 0.28)",
-                  outlineOffset: 4,
-                },
+                px: 1,
+                borderRadius: radii.panel,
+                "&:hover": { backgroundColor: "action.hover", "& .project-title": { color: "secondary.main" } },
+                "&:focus-visible": focusRing,
+                "& .MuiCardActionArea-focusHighlight": { borderRadius: "inherit" },
               }}
             >
               <ProjectCard project={project} index={index} />
@@ -123,12 +67,31 @@ export default function Projects() {
           </Card>
         ))}
       </Stack>
+      <Box
+        component="button"
+        type="button"
+        onClick={openHiddenMode}
+        aria-label={`${ui.hiddenProject}: dotfiles`}
+        sx={{
+          width: "100%", mt: 3, px: 1, py: 2,
+          display: "grid", gridTemplateColumns: "48px minmax(0, 1fr) auto", gap: 2,
+          alignItems: "center", textAlign: "left", background: "transparent",
+          border: 0, borderTop: "1px dashed", borderColor: "divider",
+          borderRadius: radii.control, color: "text.primary", opacity: 0.7,
+          fontFamily: "monospace", fontSize: "0.8rem",
+          "&:hover, &:focus-visible": { opacity: 1, color: "secondary.main", "& .secret-command": { opacity: 1 } },
+          "&:focus-visible": focusRing,
+        }}
+      >
+        <Box component="span" aria-hidden="true" sx={{ opacity: 0.6 }}>{String(projects.length + 1).padStart(2, "0")}</Box>
+        <Box component="span">.hidden/<Box component="span" className="secret-command" sx={{ opacity: 0 }}>dotfiles</Box></Box>
+        <Box component="kbd" className="secret-command" sx={{ fontFamily: "inherit", opacity: 0 }}>:w</Box>
+      </Box>
       <ProjectWindow
-        drawerState={drawerState}
-        motionMode={motionMode}
+        drawerState={drawer.state}
+        motionMode={drawer.mode}
         handleClose={handleClose}
-        handleExited={handleExited}
-        selectedProject={drawerProject}
+        selectedProject={drawer.project}
       />
     </Box>
   );

@@ -1,15 +1,15 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
 import SectionTitle from "./SectionTitle";
-import data from "../data.json";
+import { useLanguage } from "../locales/LanguageProvider";
 
-const { skills } = data;
 
 export default function Skills() {
+  const { data: { skills }, ui } = useLanguage();
   return (
     <Box component="section" id="skills" aria-labelledby="skills-heading">
       <SectionTitle id="skills-heading" number="03">
-        Skills
+        {ui.skills}
       </SectionTitle>
       <Box sx={{ display: "grid", gap: 2.25 }}>
         {skills.map((group) => (
@@ -24,10 +24,10 @@ export default function Skills() {
               borderColor: "divider",
             }}
           >
-            <Typography variant="h3" component="h3" sx={{ color: "secondary.main" }}>
+            <Typography variant="h3" component="h3" sx={{ color: "secondary.main", fontFamily: "monospace", fontSize: "0.85rem", textTransform: "uppercase" }}>
               {group.category}
             </Typography>
-            <Typography variant="body2" sx={{ lineHeight: 1.7, fontWeight: 650 }}>
+            <Typography variant="body2" sx={{ lineHeight: 1.7, fontWeight: 400 }}>
               {group.items.join(" / ")}
             </Typography>
           </Box>

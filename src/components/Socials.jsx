@@ -4,15 +4,13 @@ import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import CVMenu from "./CvMenu.jsx";
-import data from "../data.json";
+import { useLanguage } from "../locales/LanguageProvider";
 
-const { contact } = data;
 
 const buttonSx = {
   minWidth: 0,
-  width: 36,
-  height: 36,
-  borderRadius: 0,
+  width: 40,
+  height: 40,
   border: "1px solid",
   borderColor: "divider",
   color: "text.primary",
@@ -22,15 +20,13 @@ const buttonSx = {
     color: "secondary.main",
     backgroundColor: "transparent",
   },
-  "&:focus-visible": {
-    outline: "3px solid rgba(200, 32, 22, 0.3)",
-    outlineOffset: 3,
-  },
 };
 
-const Socials = () => (
+const Socials = () => {
+  const { data: { contact }, ui } = useLanguage();
+  return (
   <Box
-    aria-label="Contact links"
+    aria-label={ui.contactLinks}
     sx={{
       display: "flex",
       alignItems: "center",
@@ -39,8 +35,8 @@ const Socials = () => (
       my: { xs: 2.5, lg: 3.5 },
     }}
   >
-    <Tooltip title="Email Stanley">
-      <Button href={`mailto:${contact.email}`} aria-label="Email Stanley" sx={buttonSx}>
+    <Tooltip title={ui.email}>
+      <Button href={`mailto:${contact.email}`} aria-label={ui.email} sx={buttonSx}>
         <EmailOutlinedIcon fontSize="small" />
       </Button>
     </Tooltip>
@@ -49,7 +45,7 @@ const Socials = () => (
         href={contact.github}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Open Stanley's GitHub profile"
+        aria-label={ui.github}
         sx={buttonSx}
       >
         <GitHubIcon fontSize="small" />
@@ -60,7 +56,7 @@ const Socials = () => (
         href={contact.linkedin}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Open Stanley's LinkedIn profile"
+        aria-label={ui.linkedin}
         sx={buttonSx}
       >
         <LinkedInIcon fontSize="small" />
@@ -69,5 +65,6 @@ const Socials = () => (
     <CVMenu />
   </Box>
 );
+};
 
 export default Socials;

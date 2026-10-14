@@ -1,0 +1,116 @@
+{
+  "contact": {
+    "role": "Étudiant en génie logiciel",
+    "tagline": "Je conçois des logiciels fiables pour les systèmes embarqués, les outils réseau, les applications web et l’automatisation assistée par l’IA.",
+    "location": "Montréal, QC"
+  },
+  "about": {
+    "about_me": [
+      "Je suis étudiant en génie logiciel à Polytechnique Montréal et je terminerai mes études à l’automne 2027. Je travaille sur des systèmes embarqués, des applications web et des outils qui relient les deux.",
+      "Chez Jaunt Air Mobility, je développe des outils de contrôle au sol et des systèmes de télémétrie pour des aéronefs télépilotés. Mes projets personnels explorent d’autres problèmes : éditer et exécuter du code à plusieurs, comprendre l’espace utilisé sur un disque et réserver un rendez-vous par SMS.",
+      "J’aime comprendre ce qui se passe quand tout ne fonctionne pas comme prévu : une connexion qui coupe, du matériel qui réagit autrement ou plusieurs personnes qui utilisent le même système. Je cherche à rendre le résultat fiable et facile à comprendre."
+    ]
+  },
+  "experience": [
+    {
+      "role": "Stagiaire en génie logiciel — Logiciels de vol et systèmes de communication pour aéronefs télépilotés",
+      "location": "Montréal, QC",
+      "highlights": [
+        "Création d’un tableau de bord de surveillance réseau en temps réel pour une application de contrôle au sol Windows en Python et Tkinter, affichant la qualité, la latence et les basculements entre les liens LTE, ZeroTier VPN, SATCOM et Starlink.",
+        "Implémentation d’exports complets de télémétrie sous forme de PNG annotés et de rapports HTML interactifs pour l’analyse après vol.",
+        "Restructuration d’un code monolithique de plus de 1 500 lignes en un paquet Python organisé, facilitant la maintenance et les tests modulaires.",
+        "Développement d’un service de télémétrie MAVLink sur Raspberry Pi transmettant l’état du système embarqué et les métriques de connectivité multilien toutes les 10 secondes au moyen de messages STATUSTEXT.",
+        "Conception de tests de basculement ZeroTier mesurant la latence, la gigue et les pertes de signal entre les interfaces LTE, Wi-Fi et Iridium, avec des exports JSON structurés.",
+        "Intégration d’une liaison satellite Thales GATEWAY au pipeline de positionnement du contrôle au sol avec MAVLink, mavlink-routerd, UDP et des API REST."
+      ]
+    },
+    {
+      "role": "Développeur web",
+      "location": "Polytechnique Montréal",
+      "highlights": [
+        "Développement et maintenance de fonctionnalités React, JavaScript, Material UI et Firebase pour le site officiel du journal étudiant.",
+        "Correction de problèmes JavaScript et CSS et amélioration de la cohérence de l’interface sur mobile et ordinateur.",
+        "Travail dans une équipe Agile avec des sprints, des tickets, GitLab CI, des demandes de fusion et des revues de code."
+      ]
+    }
+  ],
+  "projects": {
+    "SpaceMind": {
+      "summary": "Un assistant de stockage local pour comprendre l’utilisation du disque, repérer les doublons et examiner les fichiers à nettoyer sans les téléverser.",
+      "description": "SpaceMind transforme une analyse des fichiers en explorateur terminal interactif pour examiner l’espace utilisé, les doublons et les éléments à nettoyer. L’historique et les décisions restent locaux; les explications facultatives par IA utilisent les métadonnées, et les actions sur les fichiers exigent une confirmation et une nouvelle vérification de leur état.",
+      "label": "Analyse du stockage / IA locale",
+      "details": [
+        "Création d’un espace de travail Rust modulaire pour l’analyse locale des fichiers, les recommandations de nettoyage déterministes, l’analyse des relations et la détection des doublons exacts avec BLAKE3, en tenant compte des liens physiques.",
+        "Développement d’un explorateur terminal interactif et d’une file de révision par catégories, avec un historique des analyses et des décisions conservé dans SQLite.",
+        "Intégration d’explications facultatives avec Ollama à partir des métadonnées, tout en gardant le contenu des fichiers local et les décisions de nettoyage sous le contrôle de l’utilisateur.",
+        "Implémentation de chemins protégés, de règles d’exclusion et d’actions de mise à la corbeille confirmées qui revérifient l’identité et les métadonnées des fichiers avant toute modification."
+      ]
+    },
+    "CodeCell Live": {
+      "summary": "Un environnement de développement dans le navigateur où plusieurs utilisateurs éditent ensemble et exécutent du Python dans des microVM Firecracker isolées.",
+      "description": "CodeCell Live permet de travailler dans le même éditeur, de voir les modifications des autres et de suivre les résultats d’exécution en temps réel. Un service Go exécute le code dans des microVM Firecracker isolées avec des limites de ressources, tandis que des contrats TypeScript partagés assurent la cohérence entre l’éditeur et le serveur.",
+      "label": "IDE collaboratif / Exécution isolée",
+      "details": [
+        "Création d’un éditeur en temps réel avec état partagé, présence de plusieurs utilisateurs et diffusion de stdout/stderr par WebSocket.",
+        "Conception d’une couche d’exécution avec un serveur Go et des microVM Firecracker pour isoler les sessions et limiter les ressources.",
+        "Utilisation de tRPC et de contrats TypeScript partagés pour maintenir la cohérence entre l’éditeur, l’API et les services d’exécution."
+      ]
+    },
+    "SMS Booking AI Agent": {
+      "title": "Agent IA de réservation par SMS",
+      "summary": "Un agent SMS qui transforme une conversation en rendez-vous confirmé dans Google Agenda, de la collecte de l’adresse à la vérification des disponibilités et à la réservation.",
+      "description": "Le client écrit à un numéro Twilio, précise le service, l’adresse et l’heure souhaitée, puis répond YES pour confirmer. L’agent vérifie les disponibilités dans Google Agenda, crée le rendez-vous et envoie la confirmation au téléphone. OpenAI aide à extraire les renseignements et à poser les questions de suivi; une machine à états suit chaque étape de la conversation.",
+      "label": "SMS bidirectionnels / Réservation dans l’agenda",
+      "details": [
+        "Connexion du webhook SMS entrant de Twilio à un service de conversation NestJS et envoi des réponses au téléphone du client avec l’API Twilio.",
+        "Collecte du service, de l’adresse et de l’heure souhaitée au fil de plusieurs messages, avec extraction et questions de suivi facultatives par OpenAI et confirmation explicite par YES/NO.",
+        "Vérification de la disponibilité lors de la confirmation, création de l’événement Google Agenda avec un compte de service et clôture de la conversation après réservation.",
+        "Persistance des entreprises, des clients et de l’état des conversations dans Supabase, avec des tests Jest du parcours et des intégrations de services."
+      ]
+    },
+    "Authorized Recon Data Pipeline": {
+      "title": "Pipeline de reconnaissance réseau autorisée",
+      "summary": "Un outil qui réunit les analyses réseau et l’exploration de sites en résultats structurés, avec un suivi en direct pour les cibles autorisées.",
+      "description": "Le pipeline coordonne une analyse réseau et une exploration de site, affiche leur progression dans le navigateur et conserve les résultats en JSON pour l’analyse. Des services distincts prennent en charge l’analyse et l’exploration, tandis qu’un orchestrateur valide les cibles et gère le parcours.",
+      "label": "Pipeline de données réseau / Cibles autorisées",
+      "details": [
+        "Orchestration d’une analyse Nmap et d’un explorateur Playwright dans des services Flask distincts au moyen d’un contrôleur Node.js.",
+        "Diffusion de la progression en direct au client React par WebSocket et conservation des résultats bruts en JSON structuré.",
+        "Validation des cibles et limitation aux analyses autorisées pour faciliter le travail d’analyse."
+      ]
+    },
+    "AI Voice Detector": {
+      "title": "Détecteur de voix par IA",
+      "summary": "Un projet de classification audio qui transforme les enregistrements bruts en caractéristiques structurées pour des expériences d’apprentissage automatique.",
+      "description": "Ce projet organise le prétraitement audio, l’extraction de caractéristiques et les expériences de classification dans un pipeline Python reproductible. Les étapes et les choix de modèles sont documentés pour permettre de revoir et de reproduire le traitement et les résultats.",
+      "label": "Traitement audio / Classification par apprentissage automatique",
+      "details": [
+        "Transformation de données audio brutes en ensembles de caractéristiques structurées avec un pipeline reproductible en pandas et NumPy.",
+        "Application de modèles PyTorch et scikit-learn pour des expériences de classification et de détection de motifs.",
+        "Documentation du prétraitement, des choix de modèles et des résultats pour faciliter la révision et la reproduction du pipeline."
+      ]
+    },
+    "Multiplayer RPG Game": {
+      "title": "Jeu de rôle multijoueur",
+      "summary": "Un jeu de rôle multijoueur développé dans une équipe de six personnes, avec un état de jeu synchronisé en temps réel.",
+      "description": "Réalisé pour le cours intégrateur LOG2990, ce jeu relie une interface web à un serveur qui synchronise les parties et conserve les données. Notre équipe Scrum de six personnes a suivi le cycle complet de développement, avec des revues de code, des tests automatisés et des pipelines CI pour intégrer les modifications.",
+      "label": "Jeu web complet / Systèmes en temps réel",
+      "details": [
+        "Développement d’un jeu de rôle multijoueur Angular et NestJS avec persistance MongoDB dans une équipe Scrum de six personnes.",
+        "Implémentation de la synchronisation Socket.IO pour l’état du jeu et les interactions simultanées.",
+        "Maintenance des pipelines GitLab CI, des tests unitaires et de bout en bout Jest/Jasmine, de la documentation OpenAPI et des revues de code par demandes de fusion GitLab."
+      ]
+    },
+    "Embedded Microcontroller System": {
+      "title": "Système embarqué sur microcontrôleur",
+      "summary": "Un robot autonome qui lit ses capteurs et commande ses moteurs grâce à du C/C++ embarqué sur un microcontrôleur AVR.",
+      "description": "Ce projet combine les lectures des capteurs, la commande des moteurs et une machine à états de navigation pour guider un robot sur un parcours autonome. Des classes C++ réutilisables gèrent les périphériques, et des tests matériels progressifs permettent de vérifier le système complet.",
+      "label": "Commande embarquée / Robot autonome",
+      "details": [
+        "Implémentation de classes C++ réutilisables pour les moteurs, les capteurs, la communication UART, les minuteries, PWM et ADC.",
+        "Création d’une machine à états de navigation déterministe combinant interrogation et interruptions pour un comportement fiable des capteurs.",
+        "Intégration et débogage progressifs du robot complet à l’aide de tests de parcours autonome."
+      ]
+    }
+  }
+}

@@ -1,37 +1,38 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
 import SectionTitle from "./SectionTitle";
-import data from "../data.json";
+import { useLanguage } from "../locales/LanguageProvider";
 
-const { about } = data;
 
 export default function About() {
+  const { data: { about }, ui } = useLanguage();
   return (
     <Box component="section" id="about" aria-labelledby="about-heading">
       <SectionTitle id="about-heading" number="01">
-        About
+        {ui.about}
       </SectionTitle>
       <Box
         sx={{
           display: "grid",
-          gridTemplateColumns: { xs: "1fr", md: "1.1fr 0.9fr" },
-          gap: { xs: 2, md: 3 },
+          gridTemplateColumns: "1fr",
+          gap: 4,
         }}
       >
         <Typography
           variant="h3"
           component="p"
           sx={{
-            color: "secondary.main",
-            fontSize: { xs: "1.55rem", sm: "2rem" },
-            lineHeight: 1,
+            color: "text.primary",
+            fontSize: { xs: "1.85rem", sm: "2.75rem" },
+            lineHeight: 1.12,
+            maxWidth: 650,
           }}
         >
-          I build software that can handle networks, hardware, real users, and messy constraints.
+          {ui.intro}
         </Typography>
-        <Box sx={{ display: "grid", gap: 1.35 }}>
+        <Box sx={{ display: "grid", gap: 2, maxWidth: 600 }}>
           {about.about_me.map((text) => (
-            <Typography key={text} variant="body2" sx={{ lineHeight: 1.55, fontWeight: 650 }}>
+            <Typography key={text} variant="body2" sx={{ lineHeight: 1.7, fontWeight: 400, color: "text.secondary" }}>
               {text}
             </Typography>
           ))}

@@ -1,0 +1,49 @@
+\input{resume-style.tex}
+\hypersetup{pdftitle={Stanley Avril: CV en génie logiciel},pdflang={fr-CA}}
+\begin{document}
+\header
+
+\section{Formation}
+\entry{Polytechnique Montréal}{Fin prévue : automne 2027}{B. Ing., Génie logiciel}{Montréal, QC}
+
+\section{Expérience}
+\entry{Jaunt Air Mobility}{Mai 2026 à Présent}{Stagiaire en génie logiciel: Logiciels de vol et communications RPAS}{Montréal, QC}
+\begin{itemize}
+  \item Développé un tableau de bord Python/Tkinter pour montrer aux opérateurs la qualité des connexions et les coupures LTE, ZeroTier VPN, SATCOM et Starlink. Ajouté des rapports PNG et HTML pour examiner la télémétrie après un vol.
+  \item Divisé une application Python de contrôle au sol de plus de 1 500 lignes en modules pour modifier et tester les fonctionnalités sans parcourir un seul gros fichier.
+  \item Écrit un service Python sur Raspberry Pi qui transmet l’état du système et des connexions à la station au sol toutes les 10 secondes avec MAVLink.
+  \item Relié une liaison satellite Thales GATEWAY au flux de position de l’aéronef avec UDP et des API REST pour transmettre les positions à la station au sol par satellite.
+\end{itemize}
+\entry{Propolys}{Mai à Août 2025}{Participant de cohorte: Accélérateur de startups}{Montréal, QC}
+\begin{itemize}
+  \item Interrogé plus de 50 utilisateurs pour définir un MVP. Développé la connexion, une API et des tableaux de bord, puis discuté des progrès avec les mentors et présenté la démo.
+\end{itemize}
+\entry{Le Polyscope}{Mai à Août 2024}{Développeur web: Journal étudiant de Polytechnique}{Montréal, QC}
+\begin{itemize}
+  \item Mis à jour le site du journal étudiant avec React, JavaScript, HTML, CSS et Firebase. Corrigé les mises en page et les problèmes d’interface pour faciliter la lecture sur téléphone et ordinateur.
+  \item Travaillé avec l’équipe en sprints Agile, avec Git et les demandes de fusion GitLab pour revoir les corrections avant de les intégrer au site.
+\end{itemize}
+
+\section{Projets sélectionnés}
+\project{CodeCell Live: IDE collaboratif dans le navigateur}{Juil. 2025 à Présent}{React / TypeScript / Monaco / tRPC / WebSocket / Go / Firecracker\quad\href{https://github.com/stanleyavril123/codecell-live}{Code}}
+\begin{itemize}
+  \item Créé un éditeur web avec React, TypeScript et Monaco pour travailler à plusieurs sur le même code. Utilisé WebSocket pour partager les modifications, les curseurs et les résultats d’exécution.
+  \item Utilisé Go et Firecracker pour exécuter Python dans des machines virtuelles séparées et isoler les exécutions. Ajouté des limites de temps et de mémoire et le nettoyage des fichiers temporaires.
+\end{itemize}
+\project{SpaceMind: Assistant de stockage local}{Juil. 2026 à Présent}{Rust / SQLite / BLAKE3 / Ollama\quad\href{https://github.com/stanleyavril123/spacemind}{Code}}
+\begin{itemize}
+  \item Écrit un outil Rust avec détection des doublons BLAKE3 pour repérer ce qui occupe le disque et examiner les fichiers avant de nettoyer.
+  \item Enregistré les analyses et les décisions avec SQL et SQLite. Ajouté des explications Ollama basées sur les métadonnées et des vérifications avant la mise à la corbeille pour aider à décider quoi nettoyer.
+\end{itemize}
+\project{Agent IA de réservation par SMS}{Déc. 2025 à Juin 2026}{TypeScript / NestJS / Twilio / OpenAI / Google Agenda / Supabase\quad\href{https://stanleyavril.dev/\#projects}{Démo}}
+\begin{itemize}
+  \item Créé un serveur TypeScript/NestJS avec Twilio et OpenAI pour demander un rendez-vous par SMS. L’agent recueille le service, l’adresse et l’heure, puis demande une confirmation.
+  \item Utilisé l’API REST de Google Agenda pour vérifier les disponibilités et ajouter les rendez-vous confirmés. Conservé les conversations dans Supabase et testé le parcours avec Jest et de vrais SMS.
+\end{itemize}
+
+\section{Compétences}
+\textbf{Langages :} Python, TypeScript, C/C++, Go, Rust, JavaScript, SQL\\
+\textbf{Web et données :} React, HTML, CSS, NestJS, Node.js, WebSocket, tRPC, SQLite, Supabase, OpenAI API\\
+\textbf{Systèmes et outils :} MAVLink, ZeroTier VPN, SATCOM, Raspberry Pi, Git, Docker, GitLab CI/CD, Jest\\
+\textbf{Langues :} français (langue maternelle), anglais (courant)
+\end{document}

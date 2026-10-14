@@ -1,0 +1,26 @@
+\documentclass[10pt,letterpaper]{article}
+\usepackage[margin=0.6in]{geometry}
+\usepackage{fontspec}
+\setmainfont{texgyreheros-regular.otf}[BoldFont=texgyreheros-bold.otf,ItalicFont=texgyreheros-italic.otf,BoldItalicFont=texgyreheros-bolditalic.otf]
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\definecolor{linkblue}{HTML}{175A80}
+\hypersetup{colorlinks=true,urlcolor=linkblue,pdfauthor={Stanley Avril}}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\emergencystretch}{1em}
+\titleformat{\section}{\large\bfseries}{}{0pt}{}[\vspace{-3pt}\titlerule]
+\titlespacing*{\section}{0pt}{7pt}{4pt}
+\setlist[itemize]{leftmargin=13pt,label=\textbullet,topsep=2pt,itemsep=1.5pt,parsep=0pt,partopsep=0pt}
+\newcommand{\entry}[4]{\textbf{#1}\hfill #2\\{\small #3\hfill #4}\par}
+\newcommand{\project}[3]{\textbf{#1}\hfill #2\\{\small #3}\par}
+\newcommand{\header}{%
+  \begin{center}
+    {\fontsize{24}{26}\selectfont\bfseries Stanley Avril}\\[5pt]
+    Montr\'eal, QC\quad\textbar\quad\href{mailto:stanley.avril@outlook.com}{stanley.avril@outlook.com}\quad\textbar\quad\href{https://stanleyavril.dev}{stanleyavril.dev}\\[3pt]
+    \href{https://github.com/stanleyavril123}{github.com/stanleyavril123}\quad\textbar\quad\href{https://linkedin.com/in/stanley-avril}{linkedin.com/in/stanley-avril}
+  \end{center}\vspace{-7pt}
+}

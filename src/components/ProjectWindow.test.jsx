@@ -1,3 +1,4 @@
+import { vi } from "vitest";
 import React from "react";
 import { fireEvent, render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
@@ -19,8 +20,8 @@ function renderPoster(overrides = {}) {
       drawerState="open"
       motionMode="poster"
       selectedProject={project}
-      handleClose={jest.fn()}
-      handleExited={jest.fn()}
+      handleClose={vi.fn()}
+      handleExited={vi.fn()}
       {...overrides}
     />
   );
@@ -35,7 +36,7 @@ test("locks background scrolling and restores it when unmounted", () => {
 });
 
 test("closes using Escape or the close button", () => {
-  const handleClose = jest.fn();
+  const handleClose = vi.fn();
   renderPoster({ handleClose });
   fireEvent.keyDown(window, { key: "Escape" });
   fireEvent.click(screen.getByRole("button", { name: "Close project details" }));

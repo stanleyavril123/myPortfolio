@@ -4,7 +4,7 @@ import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import { useLanguage } from "../locales/LanguageProvider";
 import { radii } from "../styles/shape";
 
-const assetUrl = path => /^https?:\/\//.test(path) ? path : `${process.env.PUBLIC_URL}${path}`;
+const assetUrl = path => /^https?:\/\//.test(path) ? path : `${import.meta.env.BASE_URL}${path.replace(/^\/+/, "")}`;
 
 export default function ProjectMedia({ project }) {
   const { ui } = useLanguage();

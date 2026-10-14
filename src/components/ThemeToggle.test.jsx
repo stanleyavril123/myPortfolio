@@ -1,3 +1,4 @@
+import { vi } from "vitest";
 import React from "react";
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { useTheme } from "@mui/material";
@@ -32,7 +33,7 @@ test("switches the palette and restores the saved preference on remount", async 
 
 test("uses the system theme when no preference has been saved", () => {
   const original = window.matchMedia;
-  window.matchMedia = jest.fn(() => ({ matches: true }));
+  window.matchMedia = vi.fn(() => ({ matches: true }));
   try {
     render(<Preview />);
     expect(screen.getByTestId("palette").textContent).toBe("dark:#18221c");

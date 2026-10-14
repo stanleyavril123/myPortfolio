@@ -1,3 +1,4 @@
+import { vi } from "vitest";
 import React from "react";
 import { fireEvent, render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
@@ -26,9 +27,9 @@ test("clicking a list card opens its details and video without a separate detail
 });
 
 test("the video appears only inside open project details with native playback controls", () => {
-  const { rerender } = render(<ProjectWindow selectedProject={project} drawerState="peek" motionMode="peek" handleClose={jest.fn()} />);
+  const { rerender } = render(<ProjectWindow selectedProject={project} drawerState="peek" motionMode="peek" handleClose={vi.fn()} />);
   expect(screen.queryByLabelText("Video demonstration of Example")).not.toBeInTheDocument();
-  rerender(<ProjectWindow selectedProject={project} drawerState="open" motionMode="poster" handleClose={jest.fn()} />);
+  rerender(<ProjectWindow selectedProject={project} drawerState="open" motionMode="poster" handleClose={vi.fn()} />);
   const video = screen.getByLabelText("Video demonstration of Example");
   expect(video.closest('[role="dialog"]')).toBe(screen.getByRole("dialog"));
   expect(video).toHaveAttribute("controls");
@@ -47,7 +48,7 @@ test("shows a translated fallback when video loading fails", () => {
 
 test("uses a still poster for animated GIFs when reduced motion is requested", () => {
   const original = window.matchMedia;
-  window.matchMedia = jest.fn(query => ({ matches: query.includes("prefers-reduced-motion"), addListener: jest.fn(), removeListener: jest.fn(), addEventListener: jest.fn(), removeEventListener: jest.fn() }));
+  window.matchMedia = vi.fn(query => ({ matches: query.includes("prefers-reduced-motion"), addListener: vi.fn(), removeListener: vi.fn(), addEventListener: vi.fn(), removeEventListener: vi.fn() }));
   try {
     render(<ProjectMedia project={{ ...project, media: { kind: "gif", src: "/demos/example.gif", poster: "/demos/still.png" } }} />);
     expect(screen.getByRole("img")).toHaveAttribute("src", "/demos/still.png");

@@ -1,3 +1,4 @@
+import { vi } from "vitest";
 import { act, renderHook } from "@testing-library/react";
 import useProjectDrawer, { DRAWER_TIMING } from "./useProjectDrawer";
 
@@ -5,11 +6,11 @@ const first = { title: "First", index: 0 };
 const second = { title: "Second", index: 1 };
 const third = { title: "Third", index: 2 };
 
-beforeEach(() => jest.useFakeTimers());
-afterEach(() => jest.useRealTimers());
+beforeEach(() => vi.useFakeTimers());
+afterEach(() => vi.useRealTimers());
 
 function advance(time) {
-  act(() => jest.advanceTimersByTime(time));
+  act(() => vi.advanceTimersByTime(time));
 }
 
 test("paints the hidden drawer before revealing a new peek", () => {

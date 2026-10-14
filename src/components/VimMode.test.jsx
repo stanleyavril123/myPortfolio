@@ -13,6 +13,22 @@ const command = (key, target = window) => {
 
 afterEach(() => localStorage.clear());
 
+test("h and l switch buffers without intercepting a command", async () => {
+  render(<LanguageProvider><VimMode /></LanguageProvider>);
+  command("w");
+  await screen.findByRole("dialog");
+  expect(screen.getByRole("button", { name: "dotfiles.md" })).toHaveAttribute("aria-pressed", "true");
+  fireEvent.keyDown(window, { key: "l" });
+  expect(screen.getByRole("button", { name: "portfolio.md" })).toHaveAttribute("aria-pressed", "true");
+  expect(screen.getByText("## Projects")).toBeInTheDocument();
+  fireEvent.keyDown(window, { key: "h" });
+  expect(screen.getByRole("button", { name: "dotfiles.md" })).toHaveAttribute("aria-pressed", "true");
+  fireEvent.keyDown(window, { key: ":" });
+  fireEvent.keyDown(window, { key: "l" });
+  expect(screen.getByRole("status", { name: "Vim command bar" })).toHaveTextContent(":l");
+  expect(screen.getByRole("button", { name: "dotfiles.md" })).toHaveAttribute("aria-pressed", "true");
+});
+
 test("commands wait for Enter and can be edited after an invalid command", async () => {
   render(<LanguageProvider><VimMode /></LanguageProvider>);
   fireEvent.keyDown(window, { key: ":" });

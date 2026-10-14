@@ -97,6 +97,12 @@ export default function VimMode() {
         event.preventDefault();
         if (scrollArea.current) scrollArea.current.scrollTop += event.key === "j" ? 64 : -64;
       }
+      if (open && (event.key === "h" || event.key === "l")) {
+        event.preventDefault();
+        const nextBuffer = event.key === "h" ? "dotfiles" : "portfolio";
+        if (nextBuffer !== buffer && scrollArea.current) scrollArea.current.scrollTop = 0;
+        setBuffer(nextBuffer);
+      }
     };
     const onDiscover = () => {
       reset();
@@ -111,7 +117,7 @@ export default function VimMode() {
       window.removeEventListener("blur", reset);
       window.removeEventListener(discoverEvent, onDiscover);
     };
-  }, [open]);
+  }, [open, buffer]);
 
   const closeMode = () => {
     pending.current = "";
@@ -150,6 +156,7 @@ export default function VimMode() {
     { text: "" },
     { text: "## Navigation", heading: true },
     { text: fr ? "j / k   défiler" : "j / k   scroll" },
+    { text: fr ? "h / l   changer d’onglet" : "h / l   switch tabs" },
     { text: fr ? ":q + Entrée   revenir au portfolio" : ":q + Enter   back to the portfolio" },
     { text: fr ? ":w + Entrée   ouvrir ce mode" : ":w + Enter   open this mode" },
   ];

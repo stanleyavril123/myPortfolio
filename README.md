@@ -11,6 +11,7 @@ Personal portfolio for Stanley Avril, a software engineering student at Polytech
 - French/English switching and light/dark themes
 - Custom ASCII project artwork and recorded demos inside project details
 - Hidden Vim mode: type `:w` and press Enter to open, `:q` and Enter to exit
+- In Vim mode, `j`/`k` scroll and `h`/`l` switch between dotfiles and portfolio
 - Direct email, GitHub, and LinkedIn contact actions
 
 ## Technology
